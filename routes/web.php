@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', 'MainController');
 
 Route::get(
-    'home',
+    '/',
     [
         'as' => 'home',
         'uses' => 'MainController@index'

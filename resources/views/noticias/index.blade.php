@@ -7,7 +7,7 @@
 <!-- menu content -->
 
 <!-- Section Title -->
-<div class="section-title" style="background:url(img/parallax.jpg)">
+<div class="section-title" style="background: url( {{asset('img/parallax.jpg')}} );">
     <div class="container">
         <div class="row">
             <div class="col-md-8">
@@ -102,10 +102,11 @@
                         <h4>Noticias recientes</h4>
                     </div>
 
+                    @if(Auth::check())
                     <div class="panel-box">
-
                         <a href="{{route('ArticuloCreate')}}" class="btn btn-info">Nuevo</a>
                     </div>
+                    @endif
 
                     @include('flash::message')
                     <!-- Post Item -->
@@ -123,13 +124,17 @@
                                 <span class="data-info">{{$articulo->created_at->diffForHumans()}} / <i class="fa fa-user"></i><a href="">{{$articulo->user->name}}</a> / <i class="fa fa-folder-open-o"><a href="{{route('home.filtrar.categoria', $categoria->name)}}">{{$articulo->categoria->name}}</a></i> / <i class="fa fa-comments"></i><a href="#">0</a></span>
                                 <p>{{$articulo->contenido}}<a href="{{route('articulos.show',$articulo->slug )}}">Leer [+]</a>.</p>
                                 <br>
+                                @if(Auth::check())
                                 <a href="{{route('articulos.show',$articulo->slug )}}" class="btn btn-info"><span class="glyphicon glyphicon-wrench">Ver</span>
                                 </a>
                                 <a href="{{route('ArticuloEdit', $articulo->id)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench">Editar</span>
                                 </a>
+                                @if(Auth::user()->Admin() == 'admin')
                                 <form style="display:inline" method="DELETE" action="{{route('articulos.destroy', $articulo->id)}}">
                                     <button onclick="return confirm('¿Esta seguro que desea eliminar?')" class="btn btn-danger" type="submit">Eliminar</button>
                                 </form>
+                                @endif
+                                @endif
                             </div>
                         </div>
                     </div>

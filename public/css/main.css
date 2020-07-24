@@ -10021,7 +10021,7 @@ a.text-dark:focus, a.text-dark:hover {
 .sf-menu {
   position: relative;
   margin: 0;
-  margin-left: -9px;
+  /* margin-left: -9px; */
   padding: 0;
   list-style: none;
   z-index: 999;
@@ -15423,7 +15423,7 @@ header {
 /* line 388, ../sass/main.scss */
 header .logo img {
   max-width: 100%;
-  max-height: 100px;
+  max-height: 5em;
 }
 /* line 393, ../sass/main.scss */
 header .adds img {
@@ -15501,7 +15501,7 @@ header .mobile-nav:hover {
 
 /* line 448, ../sass/main.scss */
 .header-2 .mainmenu .sf-menu {
-  text-align: right;
+  text-align: center;
   margin: 0;
 }
 
@@ -15615,7 +15615,7 @@ header .mobile-nav:hover {
 }
 /* line 533, ../sass/main.scss */
 .header-4 .mainmenu .sf-menu {
-  text-align: right;
+  text-align: center;
 }
 /* line 536, ../sass/main.scss */
 .header-4 .mainmenu .sf-menu > li {
@@ -17038,7 +17038,7 @@ iframe.big-video {
 footer {
   background: #101010;
   color: #888;
-  padding: 60px 0;
+  padding: 20px 0;
   font-size: 13px;
   line-height: 20px;
 }
@@ -17131,8 +17131,8 @@ footer.footer-3 .footer-down .col-md-12 {
 /* line 1747, ../sass/main.scss */
 footer .top-footer {
   border-bottom: 1px solid #222;
-  padding-bottom: 60px;
-  margin-bottom: 60px;
+  padding-bottom: 20px;
+  /* margin-bottom: 60px; */
 }
 /* line 1751, ../sass/main.scss */
 footer .top-footer .logo-footer {

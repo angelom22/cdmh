@@ -52,86 +52,62 @@
     </div>
     <!-- End Footer Top-->
 
-    <!-- Links Footer-->
-    <div class="links-footer">
-        <div class="container">
-            <div class="row">
-
-                <!-- Column Links -->
-                <!-- <div class="col-lg-2 col-md-5 col-sm-5">
-                    <div class="info-links">
-                        <h5>Organisation</h5>
-                        <ul>
-                            <li><a href="#">Volunteers</a></li>
-                            <li><a href="#">Committees</a></li>
-                            <li><a href="#">Official Documents</a></li>
-                            <li><a href="#">Terms of Service</a></li>
-                        </ul>
-                    </div>
-                </div> -->
-                <!-- End Column Links -->
-
-                <!-- Column Links -->
-                <!-- <div class="col-lg-4 col-md-7 col-sm-7">
-                    <div class="info-links">
-                        <h5>Groups</h5>
-                        <ul class="columns">
-                            <li><a href="#">GROUP A</a></li>
-
-                            <li><a href="#">GROUP C</a></li>
-
-                            <li><a href="#">GROUP E</a></li>
-
-                            <li><a href="#">GROUP G</a></li>
-
-                        </ul>
-                    </div>
-                </div> -->
-                <!-- End Column Links -->
-
-                <!-- Column Links -->
-                <!-- <div class="col-lg-2 col-md-5 col-sm-5">
-                    <div class="info-links">
-                        <h5>Interest Links</h5>
-                        <ul>
-                            <li><a href="#">Statistics</a></li>
-                            <li><a href="#">Teams</a></li>
-                            <li><a href="#">Qualifiers</a></li>
-                            <li><a href="#">Ticketing</a></li>
-                        </ul>
-                    </div>
-                </div> -->
-                <!-- End Column Links -->
-
-                <!-- Column Links -->
-                <!-- <div class="col-lg-4 col-md-7 col-sm-7">
-                    <div class="info-links">
-                        <h5>Organisation</h5>
-                        <ul class="columns">
-                            <li><a href="#">NIZHNY NOVGOROD</a></li>
-                            <li><a href="#">SAINT PETERSBURG</a></li>
-                            <li><a href="#">EKATERINBURG</a></li>
-                            <li><a href="#">MOSCOW</a></li>
-                            <li><a href="#">KAZAN</a></li>
-                            <li><a href="#">KALININGRAD</a></li>
-                            <li><a href="#">VOLGOGRAD</a></li>
-                            <li><a href="#">ROSTOV-ON-DON</a></li>
-                        </ul>
-                    </div>
-                </div> -->
-                <!-- End Column Links -->
-
-            </div>
-        </div>
-    </div>
-    <!-- End Links Footer-->
-
     <!-- footer Down-->
     <div class="footer-down">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <p>&copy; 2020 Club Deportivo Municipal del Hatillo | All Rights Reserved</p>
+                    @guest
+                    <a href="{{ route('login') }}"><span class="fa fa-user"></span> {{ __('Login') }}</a>
+                    @if (Route::has('register'))
+                    <!-- <a class="nav-link" href="{{ route('usuarios.create') }}">{{ __('Register') }}</a> -->
+                    @endif
+                    @else
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col col-xl-4">
+                            <nav class="mainmenu">
+                                <div class="container">
+                                    <ul class="navbar-nav mr-auto">
+                                        <li>
+                                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                {{ Auth::user()->name }} <span class="caret"></span>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                    {{ __('Logout') }}
+                                                </a>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    @csrf
+                                                </form>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <a class="nav-link" href="{{route('articulos.index')}}">Articulos</a>
+                                        </li>
+                                        @if(Auth::user()->Admin() == 'admin')
+                                        <li>
+                                            <a class="nav-link" href="{{route('categorias.index')}}">Categorias</a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link" href="{{route('etiquetas.index')}}">Etiquetas</a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link" href="{{route('usuarios.index')}}">Usuarios</a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link" href="{{ route('usuarios.create') }}">{{ __('Register') }}</a>
+                                        </li>
+                                        @endif
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+
+                    </div>
+                    @endguest
                 </div>
             </div>
         </div>

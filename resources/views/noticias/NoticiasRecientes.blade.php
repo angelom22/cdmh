@@ -1,3 +1,7 @@
+@extends('layouts.app')
+
+@section('content')
+
 <div class="panel-box">
 
     <div class="titles">
@@ -27,17 +31,13 @@
             </div>
         </div>
     </div>
-
     @endforeach
 
-    <div class="text-center">
-        {{ $articulos->links() }}
-    </div>
-
+    
     <!-- End Post Item -->
 
     <!-- Post Item -->
-    <!-- <div class="post-item">
+    <div class="post-item">
         <div class="row">
             <div class="col-md-4">
                 <div class="img-hover">
@@ -51,7 +51,7 @@
                 <p>¿Les gusta nuestra franela del quinto aniversario del club?.</p>
             </div>
         </div>
-    </div> -->
+    </div> 
     <!-- End Post Item -->
 
     <!-- Post Item -->
@@ -69,7 +69,7 @@
                 <p>Hace ya algunos años le dimos vida a un proyecto que comenzó como un sueño pero con el transcurrir del tiempo este se ha fortalecido a punta de sacrificios, trabajo, constancia, empeño y dedicación.<a href="#">Seguir Leyendo [+]</a></p>
             </div>
         </div>
-    </div> -->
+    </div>
     <!-- End Post Item -->
 
     <!-- Post Item -->
@@ -126,3 +126,6 @@
     </div> -->
     <!-- End Post Item -->
 </div>
+
+@endsection
+

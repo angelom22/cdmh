@@ -2,6 +2,10 @@
 
 @section('content')
 
+@section('css')
+
+@endsection
+
 <!-- menu content -->
 @include('layouts.menu-2')
 <!-- menu content -->
@@ -34,14 +38,10 @@
                         <input type="text" class="form-control" name="titulo" require placeholder="Título del Artículo">
                     </div>
 
-                    <div class="form-group">
-                        <label for="titulo" class="control-label col-sm-2">Contenido</label>
-                        <input type="textarea" class="text-area" name="contenido">
-                        <div class="froala-editor" name="contenido">
-
-                        </div>
+                    <div class="">
+                        <!-- <label for="titulo" class="control-label col-sm-2">Contenido</label> -->
+                        <textarea id="markdown" class="text-area" name="contenido" cols="100" rows="20"></textarea>
                     </div>
-
 
                     <div class="col-sm-4 col-md-8 ">
 
@@ -92,6 +92,8 @@
 
 @section('js')
 
+
+
 <script>
     // Selectores Multiples
     $(".chosen-select").chosen({
@@ -107,15 +109,8 @@
     });
 </script>
 
-
 <script>
     // Plugins para el textarea
     $('.text-area').trumbowyg();
-</script>
-
-<script>
-    new FroalaEditor("div#froala-editor", {
-        height: 300
-    });
 </script>
 @endsection

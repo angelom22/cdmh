@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,7 +12,7 @@ class Etiqueta extends Model
 
     public function articulos()
     {
-        return $this->belongsToMany('App\Articulo')->withTimestamps();
+        return $this->belongsToMany('App\Model\Articulo')->withTimestamps();
     }
 
     public function scopeBuscador($query, $name)

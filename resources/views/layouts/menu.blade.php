@@ -2,16 +2,7 @@
     <!-- End headerbox-->
     <div class="headerbox">
         <div class="container">
-            <div class="row justify-content-between align-items-center">
-                <!-- Logo-->
-                <div class="col col-xl-2">
-                    <div class="logo">
-                        <a href="{{url ('/')}}" title="Return Home">
-                            <img src="{{asset('img/logo.png')}}" alt="Logo" class="logo_img">
-                        </a>
-                    </div>
-                </div>
-                <!-- End Logo-->
+            <div class="row justify-content-center align-items-center">
 
                 <!-- Adds nav-->
                 <div class="col col-xl-10">
@@ -21,7 +12,7 @@
                             <!-- Menu-->
                             <ul class="sf-menu" id="menu">
                                 <li class="current">
-                                    <a href="{{url ('/')}}">Club</a>
+                                    <a href="#">Club</a>
                                     <ul class="sub-current">
                                         <li>
                                             <a href="{{url ('about')}}">Nosotros</a>
@@ -56,6 +47,14 @@
                                             <a href="#">Noticias</a>
                                         </li>
                                     </ul>
+                                </li>
+
+                                <li class="current logo">
+                                    <!-- Logo-->
+                                    <a href="{{url ('/')}}" title="Return Home">
+                                        <img src="{{asset('img/logo.png')}}" alt="Logo" class="logo_img">
+                                    </a>
+                                    <!-- End Logo-->
                                 </li>
 
                                 <li class="current">

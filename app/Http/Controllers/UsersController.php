@@ -14,6 +14,10 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware(['auth', 'admin']);
+    }
     public function index()
     {
         $users = User::orderBy('id', 'ASC')->paginate(5);
@@ -43,7 +47,7 @@ class UsersController extends Controller
         $user = new User($request->all());
         $user->password = bcrypt($request->password);
         $user->save();
-        Flash("Se ha registrado " . $user->name .  " de forma correcta")->success();
+        Flash("Se ha registrado el usuario " . $user->name .  " de forma correcta")->success();
 
         return redirect()->route('usuarios.index');
     }

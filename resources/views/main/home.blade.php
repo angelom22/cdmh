@@ -188,7 +188,7 @@
             <div class="row">
                 <div class="col lg-8">
                     <!-- Recent Post -->
-                    @include('noticias.NoticiasRecientes')
+                    
                     <!-- End Recent Post -->
                 </div>
 
@@ -348,7 +348,7 @@
 
 
     <!-- End gray Section -->
-    <div class="dark-section paddings-big">
+    <!-- <div class="dark-section paddings-big">
         <div class="scale">
             <div class="skewmask-block"></div>
         </div>
@@ -367,17 +367,17 @@
                                 <li><a href="#"><i class="fa fa-angle-right"></i> Sociales</a></li>
                                 <li><a href="#"><i class="fa fa-angle-right"></i> Recreacional</a></li>
                                 <li><a href="#"><i class="fa fa-angle-right"></i> Escolares</a></li>
-                                <!-- <li><a href="#"><i class="fa fa-angle-right"></i> Zona Rurales</a></li> -->
+                                <li><a href="#"><i class="fa fa-angle-right"></i> Zona Rurales</a></li>
                             </ul>
                         </div>
 
                         <div class="col-6">
                             <ul class="list-style">
                                 <li><a href="#"><i class="fa fa-angle-right"></i> Zona Rurales</a></li>
-                                <!-- <li><a href="#"><i class="fa fa-angle-right"></i> Committees</a></li>
-                                           <li><a href="#"><i class="fa fa-angle-right"></i> Official Documents</a></li>
-                                           <li><a href="#"><i class="fa fa-angle-right"></i> Terms Of Service</a></li>
-                                           <li><a href="#"><i class="fa fa-angle-right"></i> Organisation</a></li> -->
+                                <li><a href="#"><i class="fa fa-angle-right"></i> Committees</a></li>
+                                <li><a href="#"><i class="fa fa-angle-right"></i> Official Documents</a></li>
+                                <li><a href="#"><i class="fa fa-angle-right"></i> Terms Of Service</a></li>
+                                <li><a href="#"><i class="fa fa-angle-right"></i> Organisation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -435,7 +435,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- End Gray Section -->
 
 

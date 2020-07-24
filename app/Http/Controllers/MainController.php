@@ -6,29 +6,33 @@ use Illuminate\Http\Request;
 
 use App\Http\Resquests;
 
-use App\Articulo;
-use App\Categoria;
-use App\Etiqueta;
-use App\Image;
+use App\Model\Articulo;
+use App\Model\Categoria;
+use App\Model\Etiqueta;
+use App\Model\Image;
 use  Carbon\Carbon;
-
 
 
 class MainController extends Controller
 {
+
     public function __construct()
     {
+        $this->middleware('auth');
         Carbon::setLocale('es');
+    }
+
+    public function home()
+    {
+        $articulos = Articulo::orderBy('id', 'DESC')->paginate(4);
+
+        return view('noticias.NoticiasRecientes', compact('articulos'));
     }
 
     public function index()
     {
         $articulos = Articulo::orderBy('id', 'DESC')->paginate(4);
 
-        // $articulos->each(function ($articulos) {
-        //     $articulos->categoria;
-        //     $articulos->imagen;
-        // });
 
         return view('main.home', compact('articulos'));
     }

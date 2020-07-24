@@ -37,8 +37,21 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    // es: Desde aqui
+    // en: from here
+
+    public function roles()
+    {
+        return $this->belongsToMany('App\Permisson\Model\Roles')->withTimesTamps();
+    }
+
     public function articulo()
     {
         return $this->hasMany('App\Articulo');
+    }
+
+    public function Admin()
+    {
+        return $this->type === 'admin';
     }
 }

@@ -7,7 +7,7 @@
                         acerca de nuestros proximos eventos deportivos.</p>
                 </div>
                 <form id="newsletterForm" action="php/mailchip/newsletter-subscribe.php">
-                    <div class="row">
+                    <div class="row  justify-content-center align-items-center">
                         <div class="col-md-6">
                             <div class="input-group text-center">
                                 <span class="input-group-addon">
@@ -15,7 +15,7 @@
                                 </span>
                                 <input class="form-control" placeholder="Correo Electronico" name="email" type="email" required="required">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-primary" type="submit" name="subscribe">Suscribir</button>
+                                    <button class="btn btn-primary " type="submit" name="subscribe">Suscribir</button>
                                 </span>
                             </div>
                         </div>

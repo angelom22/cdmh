@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,6 +12,6 @@ class Image extends Model
 
     public function articulo()
     {
-        return $this->belongsTo('App\Articulo');
+        return $this->belongsTo('App\Model\Articulo');
     }
 }

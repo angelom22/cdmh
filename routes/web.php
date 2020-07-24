@@ -14,25 +14,34 @@ use Illuminate\Support\Facades\Route;
 */
 
 //
-// Route::get('/', 'MainController');
+// Route::get('/', 'MainController@home');
 
-Route::get(
-    '/',
-    [
-        'as' => 'home',
-        'uses' => 'MainController@index'
-    ]
-);
+Route::get('/', function () {
+    return view('main.home');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+// Route::get(
+//     '/',
+//     [
+//         'as' => 'home',
+//         'uses' => 'HomeController@index'
+//     ]
+// );
 
 
-
+// Ruta para filtrar las categorias
 Route::get('categorias/{name}', [
-    'uses' =>  'MainController@filtarCategoria',
+    'uses' =>  'HomeController@filtarCategoria',
     'as' => 'home.filtrar.categoria'
 ]);
 
+// Ruta para filtrar las etiquetas
 Route::get('etiquetas/{name}', [
-    'uses' =>  'MainController@filtrarEtiqueta',
+    'uses' =>  'HomeController@filtrarEtiqueta',
     'as' => 'home.filtrar.etiqueta'
 ]);
 
@@ -61,18 +70,16 @@ Ruta de Contacto
 */
 Route::resource('contacto', 'ContactoController');
 
+
 /**
  *  Ruta de Usuarios
  */
-Route::group(['prefix' => 'admin'], function () {
-    Route::resource('usuarios', 'UsersController');
+Route::resource('usuarios', 'UsersController');
 
-    Route::get('usuarios/{id}/destroy', [
-        'uses' => 'UsersController@destroy',
-        'as' => 'usuarios.destroy'
-    ]);
-});
-
+Route::get('usuarios/{id}/destroy', [
+    'uses' => 'UsersController@destroy',
+    'as' => 'usuarios.destroy'
+]);
 
 /**
  *  Rutas para las categorias
@@ -93,7 +100,6 @@ Route::get('categorias/{id}/destroy', [
 /**
  *  Rutas para las etiquetas
  */
-
 Route::resource('etiquetas', 'EtiquetasController')->names([
     'update'     => 'EtiquetaUpdate',
     'create'     => 'EtiquetaCreate',
@@ -121,3 +127,8 @@ Route::get('articulos/{id}/destroy', [
     'uses' => 'ArticulosController@destroy',
     'as' => 'articulos.destroy'
 ]);
+
+//  Acceso denegrado
+Route::get('/denied', ['as' => 'denied', function () {
+    return view('errors.403');
+}]);

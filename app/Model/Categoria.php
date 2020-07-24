@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,7 +12,7 @@ class Categoria extends Model
 
     public function articulos()
     {
-        return $this->hasMany('App\Articulo');
+        return $this->hasMany('App\Model\Articulo');
     }
 
     public function scopeFiltrarCategoria($query, $name)

@@ -34,7 +34,7 @@
                     </div>
 
                     <div class="">
-                        <label for="contenido" class="control-label col-sm-2">Contenido</label>
+                        <!-- <textarea id="markdown" class="text-area" name="contenido" cols="100" rows="20" value="{{$articulo->contenido}}"></textarea> -->
                         <input type="textarea" class="text-area" name="contenido" value="{{$articulo->contenido}}">
                     </div>
 
@@ -109,11 +109,8 @@
     $('.text-area').trumbowyg();
 </script>
 
-<script>
-    // var editor = document.getElementsById('froala-editor');
-    // $('.text-area').FroalaEditor();
-    // new FroalaEditor('div#contenido', {
-    //     height: 300
-    // });
-</script>
+<!-- <script language="javascript">
+    $('#markdown').markItUp();
+</script> -->
+
 @endsection

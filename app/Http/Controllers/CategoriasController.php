@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\CategoriaRequest;
 use  Laracasts\Flash\Flash;
-use App\Categoria;
+use App\Model\Categoria;
 
 class CategoriasController extends Controller
 {
@@ -14,6 +14,12 @@ class CategoriasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware(['auth', 'admin']);
+    }
+
     public function index()
     {
         $categorias = Categoria::orderBy('id', 'ASC')->paginate(5);

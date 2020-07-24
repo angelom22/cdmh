@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use  Laracasts\Flash\Flash;
-use App\Articulo;
-use App\Categoria;
-use App\Etiqueta;
-use App\Image;
+use App\Model\Articulo;
+use App\Model\Categoria;
+use App\Model\Etiqueta;
+use App\Model\Image;
 use App\Http\Requests\ArticuloRequest;
 use Illuminate\Support\Facades\Auth;
 use App\User;
@@ -18,6 +18,7 @@ class ArticulosController extends Controller
 
     public function __construct()
     {
+        $this->middleware(['auth', 'admin'], ['except' => ['show', 'index']]);
         Carbon::setLocale('es');
     }
 
@@ -26,6 +27,8 @@ class ArticulosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
 
     public function index(Request $request)
     {
@@ -77,9 +80,9 @@ class ArticulosController extends Controller
 
         $articulo = new Articulo($request->all());
         // dd($articulo);
-        // $articulo->user_id = Auth::user();
+        $articulo->user_id = Auth::user()->id;
         // dd($articulo->user_id);
-        $articulo->user_id = 2;
+        // $articulo->user_id = 2;
         $articulo->save();
 
         $articulo->etiquetas()->sync($request->etiquetas);

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
@@ -17,6 +17,8 @@ class Articulo extends Model
      *
      * @return array
      */
+
+
     public function sluggable()
     {
         return [
@@ -43,7 +45,7 @@ class Articulo extends Model
 
     public function categoria()
     {
-        return $this->belongsTo('App\Categoria');
+        return $this->belongsTo('App\Model\Categoria');
     }
 
     public function user()
@@ -53,12 +55,12 @@ class Articulo extends Model
 
     public function imagen()
     {
-        return $this->hasOne('App\Image');
+        return $this->hasOne('App\Model\Image');
     }
 
     public function etiquetas()
     {
-        return $this->belongsToMany('App\Etiqueta');
+        return $this->belongsToMany('App\Model\Etiqueta');
     }
 
     public function scopeBuscador($query, $titulo)

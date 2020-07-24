@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\EtiquetaRequest;
-use App\Etiqueta;
+use App\Model\Etiqueta;
 use Laracasts\Flash\Flash;
 
 class EtiquetasController extends Controller
@@ -14,6 +14,12 @@ class EtiquetasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware(['auth', 'admin']);
+    }
+
     public function index(Request $request)
     {
         $etiquetas = Etiqueta::Buscador($request->name)->orderBy('id', 'ASC')->paginate(5);

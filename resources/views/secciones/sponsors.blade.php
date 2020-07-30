@@ -11,7 +11,7 @@
                 <!--End Sponsors CLub -->
 
                 <ul class="sponsors-carousel">
-                    <li style="padding-left:2em"><a href="#"><img src="{{asset('img/sponsors/alcaldiahatillo.png')}}" alt="alcaldia del hatillo"></a></li>
+                    <li style="padding-left:2em"><a href="#"><img src="{{asset('img/sponsors/alcaldiahatillo1.png.png')}}" alt="alcaldia del hatillo"></a></li>
                     <li style="padding-left:2em"><a href="#"><img src="{{asset('img/sponsors/LogoTipografiaOlympia.png')}}" alt="colaborador"></a></li>
                     <li style="padding-left:2em"><a href="#"><img src="{{asset('img/sponsors/sponsor01.png')}}" alt=""></a></li>
                     <li style="padding-left:2em"><a href="#"><img src="{{asset('img/sponsors/sponsor03.png')}}" alt=""></a></li>

@@ -61,7 +61,7 @@
                     @guest
                     <a href="{{ route('login') }}"><span class="fa fa-user"></span> {{ __('Login') }}</a>
                     @if (Route::has('register'))
-                    <a class="nav-link" href="{{ route('usuarios.create') }}">{{ __('Register') }}</a>
+                    <!-- <a class="nav-link" href="{{ route('usuarios.create') }}">{{ __('Register') }}</a> -->
                     @endif
                     @else
                     <div class="row justify-content-center align-items-center">

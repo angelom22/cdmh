@@ -1,41 +1,58 @@
+<!-- Mobile Nav-->
 <div id="mobile-nav">
     <!-- Menu-->
-    <ul>
-        <li>
-            <a href="index.php">Club</a>
+    <ul class="sf-menu" id="menu">
+        <li class="current">
+            <a href="#">Club</a>
             <ul class="sub-current">
                 <li>
-                    <a href="about.php">Nosotros</a>
+                    <a href="{{url ('about')}}">Nosotros</a>
                 </li>
             </ul>
         </li>
 
-        <li>
+
+        <li class="current">
             <a href="#">Primer Equipo</a>
             <ul class="sub-current">
                 <li>
-                    <a href="team.php">Plantilla</a>
+                    <a href="{{route('PrimerEquipo')}}">Plantilla</a>
                 </li>
                 <li>
                     <a href="#">Noticias</a>
                 </li>
-                <li>
-                    <a href="filial.php">Filial</a>
-                </li>
+
             </ul>
         </li>
 
-        <li>
+        <li class="current">
             <a href="#">Juveniles</a>
-            <ul class="sub-curent">
+            <ul class="sub-current">
                 <li>
-                    <a href="filial.php">Sub20</a>
+                    <a href="{{route('EquipoFilial')}}">Sub20</a>
+                </li>
+                <li>
+                    <a href="#">Sub18</a>
+                </li>
+                <li>
+                    <a href="#">Noticias</a>
                 </li>
             </ul>
         </li>
 
-        <li>
-            <a href="futbase.php">Futbol Base</a>
+        <li class="current">
+            <a href="#">Futbol Base</a>
+            <ul class="sub-current">
+                <li>
+                    <a href="{{url('futbase')}}">Sub16</a>
+                </li>
+                <li>
+                    <a href="{{url('futbase')}}">Sub14</a>
+                </li>
+                <li>
+                    <a href="{{url('futbase')}}">Noticias</a>
+                </li>
+            </ul>
         </li>
 
         <li>
@@ -80,9 +97,19 @@
             </div>
         </li>
 
+        <!-- <li class="current">
+                                    <a href="#">Atletas</a>
+                                    <ul class="sub-current">
+                                        <li>
+                                            <a href="#">Lista Jugadores</a>
+                                        </li>
+                                    </ul>
+                                </li> -->
+
         <li>
-            <a href="contact.php">Contacto</a>
+            <a href="{{ url('contacto') }}">Contacto</a>
         </li>
     </ul>
     <!-- End Menu-->
 </div>
+<!-- End Mobile Nav-->

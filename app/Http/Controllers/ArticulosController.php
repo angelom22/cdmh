@@ -28,8 +28,6 @@ class ArticulosController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-
-
     public function index(Request $request)
     {
         $articulos = Articulo::Buscador($request->titulo)->orderBy('id', 'DESC')->paginate(3);

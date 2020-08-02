@@ -121,26 +121,26 @@
     <!-- Scripts -->
     <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
     <!-- popper.js-->
-    <script type="text/javascript" src="{{asset('assets/js/popper.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/popper.min.js')}}"></script>
     <!-- bootstrap.min.js-->
-    <script type="text/javascript" src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
     <!-- required-scripts.js-->
     <script type="text/javascript" src="{{asset('js/theme-scripts.js')}}"></script>
     <!-- theme-main.js-->
     <script type="text/javascript" src="{{asset('js/theme-main.js')}}"></script>
     <!-- ======================= End JQuery libs =========================== -->
 
-    <script type="text/javascript" src="{{asset('plugins/chosen/chosen.jquery.js')}}"></script>
+    <!-- <script type="text/javascript" src="{{asset('plugins/chosen/chosen.jquery.js')}}"></script>
 
     <script type="text/javascript" src="{{asset('plugins/aloha/src/lib/aloha.js')}}"></script>
 
-    <script type="text/javascript" src="{{asset('plugins/froala/js/froala_editor.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('plugins/froala/js/froala_editor.min.js')}}"></script> -->
 
     <script src="{{asset('plugins/trumbowyg/dist/trumbowyg.min.js')}}"></script>
 
     <!-- <script type="text/javascript" src="jquery.js"></script> -->
-    <script type="text/javascript" src="{{asset('plugins/markitup/jquery.markitup.js')}}"></script>
-    <script type="text/javascript" src="{{asset('plugins/markitup/sets/markdown/set.js')}}"></script>
+    <!-- <script type="text/javascript" src="{{asset('plugins/markitup/jquery.markitup.js')}}"></script>
+    <script type="text/javascript" src="{{asset('plugins/markitup/sets/markdown/set.js')}}"></script> -->
 
 
     <!-- Contenido JS Personales -->

@@ -188,7 +188,23 @@
             <div class="row">
                 <div class="col lg-8">
                     <!-- Recent Post -->
-                    
+                    <!-- Post Item -->
+                    <div class="post-item">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="img-hover">
+                                    <img src="{{asset('img/blog/NuevaIndumentaria.jpg')}}" alt="nueva indumentaria" class="img-responsive">
+                                    <div class="overlay"><a href="#">+</a></div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <h5><a href="single-news.html">Nueva Indumentaria por el #CDMH5ANIVERSARIO</a></h5>
+                                <span class="data-info">Mayo 25, 2020 / <i class="fa fa-comments"></i><a href="#">0</a></span>
+                                <p>¿Les gusta nuestra franela del quinto aniversario del club?.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Post Item -->
                     <!-- End Recent Post -->
                 </div>
 

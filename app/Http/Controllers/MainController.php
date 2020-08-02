@@ -18,21 +18,21 @@ class MainController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
         Carbon::setLocale('es');
     }
 
-    public function home()
-    {
-        $articulos = Articulo::orderBy('id', 'DESC')->paginate(4);
+    // public function home()
+    // {
+    //     $articulos = Articulo::orderBy('id', 'DESC')->paginate(4);
 
-        return view('noticias.NoticiasRecientes', compact('articulos'));
-    }
+    //     return view('noticias.NoticiasRecientes', compact('articulos'));
+    // }
 
     public function index()
     {
         $articulos = Articulo::orderBy('id', 'DESC')->paginate(4);
-
+        // dd($articulos);
 
         return view('main.home', compact('articulos'));
     }

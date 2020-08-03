@@ -130,11 +130,11 @@
     <script type="text/javascript" src="{{asset('js/theme-main.js')}}"></script>
     <!-- ======================= End JQuery libs =========================== -->
 
-    <!-- <script type="text/javascript" src="{{asset('plugins/chosen/chosen.jquery.js')}}"></script>
+    <script type="text/javascript" src="{{asset('plugins/chosen/chosen.jquery.js')}}"></script>
 
-    <script type="text/javascript" src="{{asset('plugins/aloha/src/lib/aloha.js')}}"></script>
+    <!-- <script type="text/javascript" src="{{asset('plugins/aloha/src/lib/aloha.js')}}"></script>
 
-    <script type="text/javascript" src="{{asset('plugins/froala/js/froala_editor.min.js')}}"></script> -->
+    <script type="text/javascript" src="{{asset('plugins/froala/js/froala_editor.min.js')}}"></script>  -->
 
     <script src="{{asset('plugins/trumbowyg/dist/trumbowyg.min.js')}}"></script>
 

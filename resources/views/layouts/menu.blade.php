@@ -18,7 +18,7 @@
                                             <a href="{{url ('about')}}">Nosotros</a>
                                         </li>
                                         <li>
-                                            <a href="{{route('home.filtrar.categoria', 'Noticia')}}">Noticias</a>
+                                            <a href="{{route('home.filtrar.categoria', 'Club')}}">Noticias</a>
                                         </li>
                                     </ul>
                                 </li>

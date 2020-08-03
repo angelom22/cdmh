@@ -34,16 +34,16 @@ Route::get('/', 'HomeController@index')->name('home');
 
 
 // Ruta para filtrar las categorias
-Route::get('categorias/{name}', [
-    'uses' =>  'HomeController@filtarCategoria',
-    'as' => 'home.filtrar.categoria'
-]);
+// Route::get('categorias/{name}', [
+//     'uses' =>  'HomeController@filtarCategoria',
+//     'as' => 'home.filtrar.categoria'
+// ]);
 
-// Ruta para filtrar las etiquetas
-Route::get('etiquetas/{name}', [
-    'uses' =>  'HomeController@filtrarEtiqueta',
-    'as' => 'home.filtrar.etiqueta'
-]);
+// // Ruta para filtrar las etiquetas
+// Route::get('etiquetas/{name}', [
+//     'uses' =>  'HomeController@filtrarEtiqueta',
+//     'as' => 'home.filtrar.etiqueta'
+// ]);
 
 /*
 Ruta de Nosotros

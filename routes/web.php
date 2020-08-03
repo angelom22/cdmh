@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 //
-Route::get('/', 'MainController@index')->name('index');
+// Route::get('/', 'MainController@index')->name('index');
 
 // Route::get('/', function () {
 //     return view('main.home');
@@ -22,7 +22,7 @@ Route::get('/', 'MainController@index')->name('index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 // Route::get(
 //     '/',
@@ -59,6 +59,23 @@ Route::get('team', 'EquipoController@PrimerEquipo')->name('PrimerEquipo');
 Ruta de Equipo Filial
 */
 Route::get('filial', 'EquipoController@EquipoFilial')->name('EquipoFilial');
+
+/*
+Ruta de Equipo Sub20
+*/
+Route::get('sub20', 'EquipoController@EquipoSub20')->name('sub20');
+
+
+/*
+Ruta de Equipo Sub19
+*/
+Route::get('sub19', 'EquipoController@EquipoSub19')->name('sub19');
+
+/*
+Ruta de Equipo Sub19
+*/
+Route::get('sub18', 'EquipoController@EquipoSub18')->name('sub18');
+
 
 /*
 Ruta de Futbol Base

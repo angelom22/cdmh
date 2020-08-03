@@ -21,7 +21,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['filtarCategoria', 'filtrarEtiqueta']]);
+        $this->middleware('auth', ['except' => ['index', 'filtarCategoria', 'filtrarEtiqueta']]);
         Carbon::setLocale('es');
     }
 
@@ -31,18 +31,11 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
-
-    // public function home()
-    // {
-    //     $articulos = Articulo::orderBy('id', 'DESC')->paginate(4);
-
-    //     return view('main.home', compact('articulos'));
-    // }
-
     public function index()
     {
         $articulos = Articulo::orderBy('id', 'DESC')->paginate(4);
-
+        // $categorias =  Categoria::orderBy('name', 'ASC')->get();
+        // dd( $articulos);
         return view('main.home', compact('articulos'));
         // return view('home');
     }
@@ -51,27 +44,27 @@ class HomeController extends Controller
     {
         $categoria = Categoria::FiltrarCategoria($name)->first();
         $articulos = $categoria->articulos()->paginate(4);
-        // dd($articulos);
-
-        // $articulos->each(function ($articulos) {
-        //     $articulos->categoria;
-        //     $articulos->imagen;
+        // $articulos->each(function($articulos){
+        //   $articulo->categoria;
+        //   $articulo->imagen;
         // });
 
-        return view('main.home', compact('articulos'));
+        // dd($articulo->categoria);
+
+        $categorias =  Categoria::orderBy('name', 'ASC')->get();
+        $etiquetas = Etiqueta::orderBy('name', 'ASC')->get();
+
+        return view('noticias.index', compact('articulos', 'categorias', 'etiquetas'));
     }
 
     public function filtrarEtiqueta($name)
     {
         $etiqueta = Etiqueta::FiltrarEtiqueta($name)->first();
-
         $articulos = $etiqueta->articulos()->paginate(4);
 
-        // $articulos->each(function ($articulos) {
-        //     $articulos->categoria;
-        //     $articulos->imagen;
-        // });
+        $categorias =  Categoria::orderBy('name', 'ASC')->get();
+        $etiquetas = Etiqueta::orderBy('name', 'ASC')->get();
 
-        return view('main.home', compact('articulos'));
+        return view('noticias.index', compact('articulos', 'categorias', 'etiquetas'));
     }
 }

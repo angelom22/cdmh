@@ -68,7 +68,7 @@
             </div>
         </div>
     </div>
-    <div class="bg-image-team" style="background:url(img/clubs-teams/team.jpg);"></div>
+    <div class="bg-image-team" style="background:url({{asset('img/clubs-teams/team.jpg')}});"></div>
 </div>
 <!-- End Section Title -->
 
@@ -104,7 +104,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12 col-xl-4">
-                                        <img src="img/clubs-teams/team-02.jpg" alt="">
+                                        <img src="{{asset('img/clubs-teams/team-02.jpg')}}" alt="foto Primer Equipo">
                                     </div>
 
                                     <div class="col-lg-12 col-xl-8">
@@ -1109,17 +1109,6 @@
 </section>
 <!-- End Section Area -  Content Central -->
 
-<div class="instagram-btn">
-    <div class="btn-instagram">
-        <i class="fa fa-instagram"></i>
-        SIGUENOS
-        <a href="https://www.instagram.com/cdmhfvf/" target="_blank">&#64;CDMH</a>
-    </div>
-</div>
-
-<div class="content-instagram">
-    <div id="instafeed"></div>
-</div>
-
+@include('secciones.siguenosInstagram')
 
 @endsection

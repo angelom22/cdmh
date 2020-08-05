@@ -74,7 +74,7 @@
                                 </li>
 
                                 <li class="current">
-                                    <a href="#">Futbol Base</a>
+                                    <a href="#">Fútbol Base</a>
                                     <ul class="sub-current">
                                         <li>
                                             <a href="{{url('futbase')}}">Sub16</a>

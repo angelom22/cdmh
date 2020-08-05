@@ -2,10 +2,6 @@
 
 @section('content')
 
-@section('css')
-
-@endsection
-
 <!-- menu content -->
 @include('layouts.menu-2')
 <!-- menu content -->
@@ -48,7 +44,7 @@
                         <div class="form-group control-label col-sm-2 col-md-6">
                             <label for="categoria">Categoría</label>
                             <select class="form-control select-categoria" name="categoria_id" id="id_categoria">
-                                <option value="">Seleccione</option>
+                                <option disabled selected>Seleccione</option>
                                 @foreach($categorias as $categoria)
                                 <option value="{{$categoria->id}}">{{$categoria->name}}</option>
                                 @endforeach

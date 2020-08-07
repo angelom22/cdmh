@@ -83,6 +83,12 @@ Ruta de Futbol Base
 Route::resource('futbase', 'futBaseController');
 
 /*
+Ruta de Galeria
+*/
+Route::resource('galeria', 'galeriaController');
+
+
+/*
 Ruta de Contacto
 */
 Route::resource('contacto', 'ContactoController');

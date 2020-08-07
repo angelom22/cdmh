@@ -131,7 +131,7 @@
 
 
     <!-- Parallax Section -->
-    <div class="parallax-section" style="background:url({{asset('img/parallax.jpg')}});">
+    <div class="parallax-section" style="background:url({{asset('img/parallax.jpg')}}); object-fit: cover;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12 text-center">

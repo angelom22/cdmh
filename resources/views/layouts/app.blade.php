@@ -117,7 +117,7 @@
 
     <!-- ======================= JQuery libs =========================== -->
     <!-- jQuery local-->
-    <script type="text/javascript" src="{{asset('js/jquery.js')}}"></script>
+
     <!-- Scripts -->
     <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
     <!-- popper.js-->

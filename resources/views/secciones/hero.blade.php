@@ -1,5 +1,5 @@
 <!-- section-hero-->
-<div class="hero-header hero-bg" style="background:url({{asset('img/slide/slider02.jpg')}});">
+<div class="hero-header hero-bg" style="background:url({{asset('img/slide/slider02.jpg')}}); object-fit: cover;">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 no-margin">

@@ -27,9 +27,10 @@
                     <div class="info-panel">
                         <address>
                             <strong>El Hatillo, los naranjos.</strong><br>
-                            <i class="fa fa-map-marker"></i><strong>Dirrección: </strong> Avenida Este 3 de los Naranjos<br>
-                            <i class="fa fa-plane"></i><strong>Ciudad: </strong>Venezuela, Miranda, Minicipio el Hatillo<br>
-                            <i class="fa fa-phone"></i> <abbr title="Phone">Cel:</abbr> <a href="https://api.whatsapp.com/send?phone=584168384486" target="_blank"> (0416) 838-44-86</a>
+                            <i class="fa fa-map-marker"></i><strong>Dirrección: </strong>Estado Miranda, Municipio el Hatillo, Avenida Este 3 de los Naranjos<br>
+                            <i class="fa fa-phone"></i> <abbr title="Phone">Cel:</abbr> <a href="https://api.whatsapp.com/send?phone=584168384486" target="_blank"> +58 (0416) 838-44-86</a>
+                            <br>
+                            <i class="fa fa-phone"></i> <abbr title="Phone">Cel:</abbr> <a href="https://api.whatsapp.com/send?phone=584242919556" target="_blank"> +58 (0424) 291-95-56</a>
                         </address>
                     </div>
                 </aside>

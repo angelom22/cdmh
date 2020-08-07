@@ -57,14 +57,6 @@
                                 </ul>
                             </li>
 
-                            <li class="current logo">
-                                <!-- Logo-->
-                                <a href="{{url ('/')}}" title="Return Home">
-                                    <img src="{{asset('img/logo.png')}}" alt="Logo" class="logo_img">
-                                </a>
-                                <!-- End Logo-->
-                            </li>
-
                             <li class="current">
                                 <a href="#">Fútbol Base</a>
                                 <ul class="sub-current">
@@ -80,6 +72,14 @@
                                 </ul>
                             </li>
 
+                            <li class="current logo">
+                                <!-- Logo-->
+                                <a href="{{url ('/')}}" title="Return Home">
+                                    <img src="{{asset('img/logo.png')}}" alt="Logo" class="logo_img">
+                                </a>
+                                <!-- End Logo-->
+                            </li>
+
                             <li>
                                 <a href="#">Campeonatos</a>
                                 <div class="sf-mega">
@@ -91,12 +91,12 @@
                                                 <li><a href="#">Resultados</a></li>
                                                 <li><a href="#">Grupos</a></li>
                                                 <li><a href="#">Noticias</a></li>
-                                                <li><a href="#">FVF</a></li>
+                                                <li><a href="https://www.federacionvenezolanadefutbol.org/">FVF</a></li>
                                             </ul>
                                         </div>
 
                                         <div class="col-md-3">
-                                            <h5><i class="fa fa-users" aria-hidden="true"></i> Equipos</h5>
+                                            <h5><i class="fa fa-calendar" aria-hidden="true"></i> Calendario</h5>
                                             <div class="img-hover">
                                                 <img src="{{asset('img/blog/1.jpg')}}" alt="imagen equipo" class="img-responsive">
                                                 <div class="overlay"><a href="#">+</a></div>
@@ -122,16 +122,15 @@
                                 </div>
                             </li>
 
-                            <!-- <li class="current">
-                                    <a href="#">Atletas</a>
-                                    <ul class="sub-current">
-                                        <li>
-                                            <a href="#">Lista Jugadores</a>
-                                        </li>
-                                    </ul>
-                                </li> -->
+                            <li class="current">
+                                <a href="{{ url('galeria') }}">Multimedia</a>
+                            </li>
 
-                            <li>
+                            <li class="current">
+                                <a href="#">Calendario</a>
+                            </li>
+
+                            <li class="current">
                                 <a href="{{ url('contacto') }}">Contacto</a>
                             </li>
                             </ul>

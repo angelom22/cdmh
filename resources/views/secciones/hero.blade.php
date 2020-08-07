@@ -1,5 +1,10 @@
 <!-- section-hero-->
-<div class="hero-header hero-bg" style="background:url({{asset('img/slide/slider02.jpg')}}); object-fit: cover;">
+<div class="hero-header hero-bg" style="background:url({{asset('img/slide/slider02.jpg')}});
+object-fit: cover;
+background-size: cover !important;
+background-attachment: fixed !important;
+background-position: top center !important;
+background-repeat: no-repeat !important;">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 no-margin">

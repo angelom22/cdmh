@@ -33,13 +33,25 @@
     <div class="container paddings">
         <div class="row">
 
-    hola
+            <div class="galeria">
+                <img src="{{asset('img/galeria/uno.jpg')}}" alt="" class="img img-1">
+                <img src="{{asset('img/galeria/dos.jpg')}}" alt="" class="img img-2">
+                <img src="{{asset('img/galeria/tres.jpg')}}" alt="" class="img img-3">
+                <img src="{{asset('img/galeria/cuatro.jpg')}}" alt="" class="img img-4">
+                <img src="{{asset('img/galeria/cinco.jpg')}}" alt="" class="img img-5">
+                <img src="{{asset('img/galeria/seis.jpg')}}" alt="" class="img img-6">
+                .<div class="container">
+                    <img src="" alt="" class="img-show">
+                    <img src="{{asset('img/img-theme/bx-x.svg')}}" alt="close">
+                </div>
+            </div>
+
         </div>
     </div>
 
-        <!-- Newsletter -->
-        @include('secciones.suscripcion')
-        <!-- End Newsletter -->
+    <!-- Newsletter -->
+    @include('secciones.suscripcion')
+    <!-- End Newsletter -->
 
 
 </section>

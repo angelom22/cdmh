@@ -19922,3 +19922,25 @@ table.career tr td img {
     width: 100%;
     height: 38px;
 }
+
+/* Galeria */
+.galeria {
+    border: 1px solid red;
+    display: flex;
+    flex-wrap: wrap;
+    height: 600px;
+    /* grid-template-columns: repeat (5, 1fr); */
+    /* grid-template-rows: repeat (6, 1fr); */
+    /* grid-gap: 10px; */
+    width: 95%;
+    margin: 20px auto;
+    padding: 40px 0;
+    overflow: hidden;
+}
+ 
+.galeria img {
+    width: 100px;
+    height: 100px;
+    vertical-align: top;
+    object-fit: cover;
+}

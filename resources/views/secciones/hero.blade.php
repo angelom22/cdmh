@@ -35,17 +35,24 @@ background-repeat: no-repeat !important;">
                             <div class="horizontal-next-teams">
                                 <div class="row align-items-center">
                                     <div class="col">
-                                        <a href="single-team.html">
+                                        <a href="#">
                                             <img src="{{asset('img/logo.png')}}" alt="logo del club">
                                             <span>CHMH</span>
                                         </a>
                                     </div>
                                     <div class="col">
-                                        <strong>Vs</strong>
+                                        <strong>3</strong>
                                     </div>
                                     <div class="col">
-                                        <a href="single-team.html">
-                                            <img src="{{asset('img/logo.png')}}" alt="logo de la visita">
+                                        <strong>Vs</strong>
+                                        <span>Final</span>
+                                    </div>
+                                    <div class="col">
+                                        <strong>0</strong>
+                                    </div>
+                                    <div class="col">
+                                        <a href="#">
+                                            <img src="{{asset('img/clubs-logos/BARUTA.png')}}" alt="logo de la visita">
                                             <span>Visita</span>
                                         </a>
                                     </div>

@@ -172,7 +172,7 @@
     </div>
 
     <!-- Newsletter -->
-    @include('secciones.suscripcion')
+    
     <!-- End Newsletter -->
 
 </section>

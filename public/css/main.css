@@ -753,6 +753,7 @@ pre code {
 }
 @media (min-width: 768px) {
     /* line 6, ../sass/bootstrap/_grid.scss */
+    
     .container {
         max-width: 720px;
     }
@@ -1309,6 +1310,7 @@ footer .links-footer ul.columns li,
 }
 @media (min-width: 768px) {
     /* line 32, ../sass/bootstrap/mixins/_grid-framework.scss */
+    
     .col-md {
         flex-basis: 0;
         flex-grow: 1;
@@ -4226,6 +4228,7 @@ tbody.collapse.show {
 }
 @media (min-width: 768px) {
     /* line 139, ../sass/bootstrap/_navbar.scss */
+    
     .navbar-expand-md {
         flex-direction: row;
         flex-wrap: nowrap;
@@ -6508,6 +6511,8 @@ a.bg-dark:hover {
 }
 @media (min-width: 768px) {
     /* line 9, ../sass/bootstrap/utilities/_display.scss */
+    
+    
     .d-md-none {
         display: none !important;
     }
@@ -7010,6 +7015,8 @@ a.bg-dark:hover {
 }
 @media (min-width: 768px) {
     /* line 9, ../sass/bootstrap/utilities/_flex.scss */
+    
+    
     .flex-md-row {
         flex-direction: row !important;
     }
@@ -7479,6 +7486,7 @@ a.bg-dark:hover {
 }
 @media (min-width: 768px) {
     /* line 5, ../sass/bootstrap/utilities/_float.scss */
+    
     .float-md-left {
         float: left !important;
     }
@@ -8592,6 +8600,8 @@ a.bg-dark:hover {
 }
 @media (min-width: 768px) {
     /* line 10, ../sass/bootstrap/utilities/_spacing.scss */
+    
+    
     .m-md-0 {
         margin: 0 !important;
     }
@@ -10086,6 +10096,8 @@ a.bg-dark:hover {
 }
 @media (min-width: 768px) {
     /* line 17, ../sass/bootstrap/utilities/_text.scss */
+    
+
     .text-md-left {
         text-align: left !important;
     }
@@ -16388,6 +16400,7 @@ header .mobile-nav:hover {
 img {
     max-width: 100%;
     height: auto;
+    margin-right: auto;
 }
 
 /* line 640, ../sass/main.scss */
@@ -17526,7 +17539,7 @@ iframe.big-video {
 /* line 1486, ../sass/main.scss */
 .nav-tabs li a {
     border: 0;
-    padding: 12px 35px;
+    padding: 12px 25px;
     background: #18191b;
     color: #fff;
 }
@@ -19205,6 +19218,7 @@ address strong {
     width: 230px;
     left: 50%;
     margin-left: -115px;
+    margin-top: 15px;
     top: -51px;
     z-index: 99;
     color: #fff;

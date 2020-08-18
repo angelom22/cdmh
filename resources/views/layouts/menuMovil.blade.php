@@ -1,12 +1,14 @@
 <!-- Mobile Nav-->
 <div id="mobile-nav">
-    <!-- Menu-->
-    <ul class="sf-menu" id="menu">
+    <ul>
         <li class="current">
             <a href="#">Club</a>
             <ul class="sub-current">
                 <li>
                     <a href="{{url ('about')}}">Nosotros</a>
+                </li>
+                <li>
+                    <a href="{{route('home.filtrar.categoria', 'Club')}}">Noticias</a>
                 </li>
             </ul>
         </li>
@@ -19,9 +21,9 @@
                     <a href="{{route('PrimerEquipo')}}">Plantilla</a>
                 </li>
                 <li>
-                    <a href="#">Noticias</a>
+                <li>
+                    <a href="{{route('home.filtrar.categoria', 'Primer Equipo')}}">Noticias</a>
                 </li>
-
             </ul>
         </li>
 
@@ -29,30 +31,44 @@
             <a href="#">Juveniles</a>
             <ul class="sub-current">
                 <li>
-                    <a href="{{route('EquipoFilial')}}">Sub20</a>
+                    <a href="{{route('sub20')}}">Sub20</a>
                 </li>
                 <li>
-                    <a href="#">Sub18</a>
+                    <!-- <a href="{{route('sub19')}}">Sub19</a> -->
                 </li>
                 <li>
-                    <a href="#">Noticias</a>
+                    <a href="{{route('sub18')}}">Sub18</a>
+                </li>
+                <li>
+                    <a href="{{route('sub16')}}">Sub16</a>
+                </li>
+                <li>
+                    <a href="{{route('home.filtrar.categoria', 'Juveniles')}}">Noticias</a>
                 </li>
             </ul>
         </li>
 
         <li class="current">
-            <a href="#">Futbol Base</a>
+            <a href="#">Fútbol Base</a>
             <ul class="sub-current">
-                <li>
-                    <a href="{{url('futbase')}}">Sub16</a>
-                </li>
                 <li>
                     <a href="{{url('futbase')}}">Sub14</a>
                 </li>
                 <li>
-                    <a href="{{url('futbase')}}">Noticias</a>
+                    <a href="{{url('futbase')}}">Sub12</a>
+                </li>
+                <li>
+                    <a href="{{route('home.filtrar.categoria', 'Fútbol Base')}}">Noticias</a>
                 </li>
             </ul>
+        </li>
+
+        <li class="current logo">
+            <!-- Logo-->
+            <a href="{{url ('/')}}" title="Inicio">
+                Inicio
+            </a>
+            <!-- End Logo-->
         </li>
 
         <li>
@@ -66,14 +82,14 @@
                             <li><a href="#">Resultados</a></li>
                             <li><a href="#">Grupos</a></li>
                             <li><a href="#">Noticias</a></li>
-                            <li><a href="#">FVF</a></li>
+                            <li><a href="https://www.federacionvenezolanadefutbol.org/" target="_blank">FVF</a></li>
                         </ul>
                     </div>
 
                     <div class="col-md-3">
-                        <h5><i class="fa fa-users" aria-hidden="true"></i> Equipos</h5>
+                        <h5><i class="fa fa-calendar" aria-hidden="true"></i> Calendario</h5>
                         <div class="img-hover">
-                            <img src="img/blog/1.jpg" alt="" class="img-responsive">
+                            <img src="{{asset('img/blog/calendario.jpg')}}" alt="calendaio" class="img-responsive">
                             <div class="overlay"><a href="#">+</a></div>
                         </div>
                     </div>
@@ -81,7 +97,7 @@
                     <div class="col-md-3">
                         <h5><i class="fa fa-futbol-o" aria-hidden="true"></i> Jugadores</h5>
                         <div class="img-hover">
-                            <img src="img/blog/2.jpg" alt="" class="img-responsive">
+                            <img src="{{asset('img/blog/NuevaIndumentaria.jpg')}}" alt="imagen jugadores" class="img-responsive">
                             <div class="overlay"><a href="#">+</a></div>
                         </div>
                     </div>
@@ -89,7 +105,7 @@
                     <div class="col-md-3">
                         <h5><i class="fa fa-gamepad" aria-hidden="true"></i> Resultados</h5>
                         <div class="img-hover">
-                            <img src="img/blog/3.jpg" alt="" class="img-responsive">
+                            <img src="{{asset('img/blog/1.jpg')}}" alt="imagen resultados" class="img-responsive">
                             <div class="overlay"><a href="#">+</a></div>
                         </div>
                     </div>
@@ -97,16 +113,15 @@
             </div>
         </li>
 
-        <!-- <li class="current">
-                                    <a href="#">Atletas</a>
-                                    <ul class="sub-current">
-                                        <li>
-                                            <a href="#">Lista Jugadores</a>
-                                        </li>
-                                    </ul>
-                                </li> -->
+        <li class="current">
+            <a href="#">Multimedia</a>
+        </li>
 
-        <li>
+        <li class="current">
+            <a href="#">Calendario</a>
+        </li>
+
+        <li class="current">
             <a href="{{ url('contacto') }}">Contacto</a>
         </li>
     </ul>

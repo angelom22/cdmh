@@ -46,8 +46,6 @@
 
     <!-- Newsletter -->
 
-    @include('secciones.suscripcion')
-
     <!-- End Newsletter -->
 </section>
 <!-- End Section Area -  Content Central -->

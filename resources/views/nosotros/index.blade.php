@@ -43,8 +43,11 @@
                         <span class="acc-trigger"><a href="#">Historia</a></span>
                         <div class="acc-container" style="display: none;">
                             <div class="content">
-                                <p align="justify">Este club joven que su fundación data desde el año 2015, nace a raíz del pensamiento de una persona que trabaja en pro de rescatar los valores sociales y culturales a través del deporte y en beneficio de los jóvenes. Para sembrar en ellos diciplina y deseos de autosuperación, motivándolos a través de este lindo deporte como lo es el futbol.</p>
-                                <p align="justify">Con el deseo y las ganas de convertirse en el club ejemplo y reconocido a nivel municipal y nacional, este sigue día tras día enfocado en alcanzar los objetivos propuestos cada año, que ayuden a mejorar la imagen del Club Municipal de el Hatillo.</p>
+                                <p align="justify">El Club Deportivo Municipal de el Hatillo es una iniciativa de un grupo de jóvenes encabezados por Jesús Ortiz, Pedro Celis, Stefano Osuna, Johiner García y Charles Cardoza, después de participar en un torneo amateur bajo el nombre de Deportivo Miranda. Se creó el club ante el hecho de que no existía un equipo de futbol que representara al Municipio de el Hatillo en los torneos Federados. Fue así que se maduró la idea y posteriormente se registró el nombre del equipo y se conforma la Junta Directiva de la siguiente manera: Jesús Ortiz como Presidente, Luis Arcay como Vicepresidente, Pedro Celis como Secretario, Stefano Osuna como Tesorero, y finalmente Charles Cardoza y Johiner García como Vocales.</p>
+                                <p align="justify">Con sede en el Caracas Theater Club el equipo comenzó sus entrenamientos en el 2016 con dos categorías que se inscribieron en el Torneo Distrital de Caracas con la intención de competir contra las mejores instituciones deportivas del futbol capitalino. Bajo la dirección técnica de Jesús Ortiz, el primer equipo obtuvo resultados positivos en su primer año reuniendo jugadores con experiencia en 3ra división. Con una dirección técnica compartida de Pedro Celis y Jesús Ortiz se logró conformar un equipo sub 20 competitivo que obtuvo su pase a 8vos de final en su primer año de competencia dejando su marca en la historia del club, con jugadores como Ocram Uribe, Felipe Meneses, Daniel Vieira, Jesús Cancelo entre otros.
+                                Debido a los éxitos deportivos y el crecimiento institucional del club, en el 2018 la sede fue trasladada al Polideportivo Los Naranjos donde establecería su sede Administrativa. Los cambios se vieron en lo deportivo donde el club amplio la academia, inscribiendo una categoría sub 14, sub 16 y sub 18. Obteniendo el reconocimiento oficial como la Selección de Futbol del Municipio de el Hatillo.</p>
+                                <p align="justify">Después de un año de éxitos a nivel institucional, el 2019 saco lo mejor de nuestros atletas dejando los mejores resultados en la historia del club, consiguiendo llegar a instancias de clasificación con 4 categorías [14,16,18,20] y consiguiendo llegar a semifinales del torneo con dos de ellas [14 y 20].  El club también consolido los logros deportivos en el área Administrativa, fortaleciendo las bases de la Institución con la llegada de Vanessa Lander como Gerente General y Edgardo Rivas. </p>
+                                <p align="justify">Para el 2020 el Club cuenta con 7 categorías compitiendo en el Torneo Distrital de Caracas, con un aproximado de 100 atletas defendiendo el escudo, los colores e ideales del Club Deportivo Municipal de el Hatillo. ¿Y tú, estás preparado para hacer historia junto a esta gran Familia?</p>
                             </div>
                         </div>
 
@@ -244,7 +247,7 @@
     <!-- End Sponsors -->
 
     <!-- Newsletter -->
-    @include('secciones.suscripcion')
+    
     <!-- End Newsletter -->
 
 </section>

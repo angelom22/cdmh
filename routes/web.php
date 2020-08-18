@@ -76,6 +76,11 @@ Ruta de Equipo Sub19
 */
 Route::get('sub18', 'EquipoController@EquipoSub18')->name('sub18');
 
+/*
+Ruta de Equipo Sub19
+*/
+Route::get('sub16', 'EquipoController@EquipoSub16')->name('sub16');
+
 
 /*
 Ruta de Futbol Base

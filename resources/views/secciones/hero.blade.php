@@ -1,5 +1,5 @@
 <!-- section-hero-->
-<div class="hero-header hero-bg" style="background:url({{asset('img/slide/slider02.jpg')}});
+<div class="hero-header hero-bg" style="background:url({{asset('img/slide/hero.jpg')}});
 object-fit: cover;
 background-size: cover !important;
 background-attachment: fixed !important;

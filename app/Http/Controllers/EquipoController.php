@@ -37,5 +37,10 @@ class EquipoController extends Controller
         return view('equipos.Sub18');
     }
 
+    public function EquipoSub16()
+    {
+        return view('equipos.Sub16');
+    }
+
     
 }

@@ -11,14 +11,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <h1>Galeria</h1>
+                <h1>Galería</h1>
             </div>
 
             <div class="col-md-4">
                 <div class="breadcrumbs">
                     <ul>
                         <li><a href="{{url('/')}}">Inicio</a></li>
-                        <li>Galeria</li>
+                        <li>Galería</li>
                     </ul>
                 </div>
             </div>

@@ -46,10 +46,13 @@
                                         <a href="{{route('sub20')}}">Sub20</a>
                                     </li>
                                     <li>
-                                        <a href="{{route('sub19')}}">Sub19</a>
+                                        <!-- <a href="{{route('sub19')}}">Sub19</a> -->
                                     </li>
                                     <li>
                                         <a href="{{route('sub18')}}">Sub18</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('sub16')}}">Sub16</a>
                                     </li>
                                     <li>
                                         <a href="{{route('home.filtrar.categoria', 'Juveniles')}}">Noticias</a>
@@ -98,7 +101,7 @@
                                         <div class="col-md-3">
                                             <h5><i class="fa fa-calendar" aria-hidden="true"></i> Calendario</h5>
                                             <div class="img-hover">
-                                                <img src="{{asset('img/blog/1.jpg')}}" alt="imagen equipo" class="img-responsive">
+                                                <img src="{{asset('img/blog/calendario.jpg')}}" alt="calendaio" class="img-responsive">
                                                 <div class="overlay"><a href="#">+</a></div>
                                             </div>
                                         </div>
@@ -106,7 +109,7 @@
                                         <div class="col-md-3">
                                             <h5><i class="fa fa-futbol-o" aria-hidden="true"></i> Jugadores</h5>
                                             <div class="img-hover">
-                                                <img src="{{asset('img/blog/2.jpg')}}" alt="imagen jugadores" class="img-responsive">
+                                                <img src="{{asset('img/blog/NuevaIndumentaria.jpg')}}" alt="imagen jugadores" class="img-responsive">
                                                 <div class="overlay"><a href="#">+</a></div>
                                             </div>
                                         </div>
@@ -114,7 +117,7 @@
                                         <div class="col-md-3">
                                             <h5><i class="fa fa-gamepad" aria-hidden="true"></i> Resultados</h5>
                                             <div class="img-hover">
-                                                <img src="{{asset('img/blog/3.jpg')}}" alt="imagen resultados" class="img-responsive">
+                                                <img src="{{asset('img/blog/resultados.jpg')}}" alt="imagen resultados" class="img-responsive">
                                                 <div class="overlay"><a href="#">+</a></div>
                                             </div>
                                         </div>

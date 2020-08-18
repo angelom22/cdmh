@@ -5,13 +5,13 @@
             <div class="row justify-content-center align-items-center">
 
                 <!-- Logo-->
-                <!-- <div class="col col-xl-2">
+                <div class="col col-xl-2" style="display: none;">
                     <div class="logo">
                         <a href="{{url ('/')}}" title="Return Home">
                             <img src="{{asset('img/logo.png')}}" alt="Logo" class="logo_img">
                         </a>
                     </div>
-                </div> -->
+                </div>
                 <!-- End Logo-->
 
                 <!-- Adds nav-->

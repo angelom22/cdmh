@@ -73,13 +73,13 @@
                                     </ul>
                                 </li>
 
-                                <li class="current logo">
-                                    <!-- Logo-->
-                                    <a href="{{url ('/')}}" title="Inicio">
-                                        <img src="{{asset('img/logo.png')}}" alt="Logo" class="logo_img">
-                                    </a>
-                                    <!-- End Logo-->
-                                </li>
+                                
+                                <!-- Logo-->
+                                <a href="{{url ('/')}}" title="Inicio" class="logo">
+                                    <img src="{{asset('img/logo.png')}}" alt="Logo" class="logo_img">
+                                </a>
+                                <!-- End Logo-->
+                                
 
                                 <li>
                                     <a href="#">Campeonatos</a>

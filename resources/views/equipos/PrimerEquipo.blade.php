@@ -203,12 +203,13 @@
                             <!--End Sponsors CLub -->
 
                             <ul class="sponsors-carousel">
-                                <li><a href="#"><img src="img/sponsors/AlcaldiaHatillo.png" alt="alcaldia del hatillo"></a></li>
-                                <li><a href="#"><img src="img/sponsors/LogoTipografiaOlympia.png" alt="colaborador"></a></li>
-                                <li><a href="#"><img src="img/sponsors/sponsor01.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/sponsors/sponsor03.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/sponsors/sponsor02.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/sponsors/sponsor04.png" alt=""></a></li>
+                                <li><a href="#"><img src="{{asset('img/sponsors/AlcaldiaHatillo.png')}}" alt="alcaldia del hatillo"></a></li>
+                                <li><a href="#"><img src="{{asset('img/sponsors/LogoTipografiaOlympia.png')}}" alt="colaborador 1"></a></li>
+                                <li><a href="#"><img src="{{asset('img/sponsors/logoveneztec.png')}}" alt="colaborador 2"></a></li>
+                                <li><a href="#"><img src="{{asset('img/sponsors/sponsor01.png')}}" alt="colaborador 3"></a></li>
+                                <li><a href="#"><img src="{{asset('img/sponsors/sponsor03.png')}}" alt="colaborador 4"></a></li>
+                                <li><a href="#"><img src="{{asset('img/sponsors/sponsor02.png')}}" alt="colaborador 5"></a></li>
+                                <li><a href="#"><img src="{{asset('img/sponsors/sponsor04.png')}}" alt="colaborador 6"></a></li>
                             </ul>
 
                         </div>
@@ -220,7 +221,7 @@
                                 <div class="col-xl-4 col-lg-6 col-md-6">
                                     <div class="item-player">
                                         <div class="head-player">
-                                            <img src="img/players/stefano.jpg" alt="location-team">
+                                            <img src="{{asset('img/players/stefano.jpg')}}" alt="location-team">
                                             <div class="overlay"><a href="#">+</a></div>
                                         </div>
                                         <div class="info-player">
@@ -233,7 +234,7 @@
                                             </h4>
                                             <ul>
                                                 <li>
-                                                    <strong>NACIONALIDAD</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Venezolano </span
+                                                    <strong>NACIONALIDAD:</strong> <span>Venezolano</span>
                                                 </li>
                                                 <li><strong>EDAD:</strong> <span>26</span></li>
                                                 <li><strong>PARTIDOS:</strong> <span>60</span></li>

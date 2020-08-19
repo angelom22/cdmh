@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('css')
+    
+@endsection
+
 @section('content')
 
 <!-- menu content -->
@@ -36,6 +40,7 @@
                     <div class="">
                         <!-- <textarea id="markdown" class="text-area" name="contenido" cols="100" rows="20" value="{{$articulo->contenido}}"></textarea> -->
                         <input type="textarea" class="text-area" name="contenido" value="{{$articulo->contenido}}">
+                        <!-- <textarea value="{{$articulo->contenido}}" id="text-area" name="contenido" class="textarea wysihtml5-editor placeholder" rows="5" marginwidth="0" marginheight="0" contenteditable="true" spellcheck="true" style="background-color: rgb(255, 255, 255); color: rgb(85, 85, 85); cursor: text; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18px; letter-spacing: normal; text-align: start; text-decoration: none solid rgb(85, 85, 85); text-indent: 0px; text-rendering: auto; word-break: normal; overflow-wrap: break-word; word-spacing: 0px;"></textarea> -->
                     </div>
 
                     <div class="col-sm-4 col-md-8 ">
@@ -89,6 +94,7 @@
 
 @section('js')
 
+
 <script>
     // Selectores Multiples
     $(".chosen-select").chosen({
@@ -104,13 +110,11 @@
     });
 </script>
 
+
 <script>
     // Plugins para el textarea
     $('.text-area').trumbowyg();
 </script>
 
-<!-- <script language="javascript">
-    $('#markdown').markItUp();
-</script> -->
 
 @endsection

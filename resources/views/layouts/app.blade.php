@@ -39,6 +39,10 @@
     <link rel="stylesheet" type="text/css" href="{{asset('plugins/markitup/skins/markitup/style.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('plugins/markitup/sets/markdown/style.css')}}" />
 
+    
+    
+
+
     <!-- Contenido Styles Personales -->
 
     @yield('css')

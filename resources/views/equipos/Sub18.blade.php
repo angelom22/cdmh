@@ -19,10 +19,10 @@
                     <div class="col-md-9">
                         <h1>Categoría Sub18</h1>
                         <ul class="general-info">
-                            <!-- <li>
-                                <h6><strong>Fundación:</strong> 2015</h6>
-                            </li>
                             <li>
+                                <h6><strong>Fundación:</strong> 2017</h6>
+                            </li>
+                            <!-- <li>
                                 <h6><strong>Presidente:</strong> Jesus Ortiz.</h6>
                             </li> -->
                             <li>
@@ -30,7 +30,7 @@
                             </li>
                             <!-- <li><h6><strong>Total Titles:</strong> 100+</h6></li> -->
                             <li>
-                                <h6><strong>Categoia:</strong> Sub 18</h6>
+                                <h6><strong>Categoía:</strong> Sub 18</h6>
                             </li>
                             <li>
                                 <h6><strong>Torneo:</strong> Distrito Nacional</h6>
@@ -103,11 +103,11 @@
 
                             <div class="panel-box padding-b">
                                 <div class="titles">
-                                    <h4>Descripción</h4>
+                                    <h4>Categoría Sub18</h4>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12 col-xl-4">
-                                        <img src="{{asset('img/clubs-teams/team-02.jpg')}}" alt="">
+                                        <img src="{{asset('img/clubs-teams/sub18.jpg')}}" alt="">
                                     </div>
 
                                     <div class="col-lg-12 col-xl-8">
@@ -1104,8 +1104,6 @@
     <!-- Single Team Tabs -->
 
     <!-- Newsletter -->
-
-    @include ('secciones.suscripcion')
 
     <!-- End Newsletter -->
 </section>

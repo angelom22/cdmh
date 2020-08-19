@@ -24,8 +24,8 @@ class ArticuloRequest extends FormRequest
     public function rules()
     {
         return [
-            'titulo'            => 'min:10|max:250|required|unique:articulos',
-            'contenido'     => 'min:60|required',
+            'titulo'            => 'min:5|max:250|required|unique:articulos',
+            'contenido'     => 'min:20|required',
             'image'             => 'image|required',
             'categoria_id'  => 'required'
         ];

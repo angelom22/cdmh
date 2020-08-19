@@ -20,7 +20,7 @@
                         <h1>Categoría Sub20</h1>
                         <ul class="general-info">
                             <li>
-                                <h6><strong>Fundación:</strong> 2015</h6>
+                                <h6><strong>Fundación:</strong> 2017</h6>
                             </li>
                             <!-- <li>
                                 <h6><strong>Presidente:</strong> Jesus Ortiz.</h6>
@@ -30,7 +30,7 @@
                             </li>
                             <!-- <li><h6><strong>Total Titles:</strong> 100+</h6></li> -->
                             <li>
-                                <h6><strong>Categoia:</strong> Sub 20</h6>
+                                <h6><strong>Categoría:</strong> Sub 20</h6>
                             </li>
                             <li>
                                 <h6><strong>Torneo:</strong> Distrito Nacional</h6>
@@ -1104,8 +1104,6 @@
     <!-- Single Team Tabs -->
 
     <!-- Newsletter -->
-
-    @include ('secciones.suscripcion')
 
     <!-- End Newsletter -->
 </section>

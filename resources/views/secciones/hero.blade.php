@@ -10,8 +10,9 @@ background-repeat: no-repeat !important;">
             <div class="col-lg-12 no-margin">
                 <!-- <h1>Club Deportivo Municipal De El Hatillo</h1> -->
             </div>
+            
             <div class="col-lg-12">
-                <div class="box-start">
+                <div class="box-start"> 
                     <div class="row align-items-center">
                         <div class="col-lg-4">
                             <div class="info-match">
@@ -24,8 +25,8 @@ background-repeat: no-repeat !important;">
                                     </div>
                                     <div class="col">
                                         <h4>
-                                            <span>Locación</span>
-                                            Caracas
+                                            <span>Catagoría</span>
+                                            Primera
                                         </h4>
                                     </div>
                                 </div>

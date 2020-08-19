@@ -884,6 +884,7 @@ footer .links-footer ul.columns li,
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
+    /* margin-top: 15px; */
 }
 
 /* line 32, ../sass/bootstrap/mixins/_grid-framework.scss */
@@ -11667,6 +11668,7 @@ html.mm-opening .mm-slideout {
 /* line 185, ../sass/_partials/_slick.scss */
 .sponsors-carousel {
     padding: 0 20px;
+    
 }
 /* line 189, ../sass/_partials/_slick.scss */
 .sponsors-carousel .slick-prev:before,
@@ -17838,6 +17840,7 @@ footer.footer-3 .footer-down .col-md-12 {
 footer .top-footer {
     border-bottom: 1px solid #222;
     padding-bottom: 20px;
+    margin-top: 20px;
     /* margin-bottom: 60px; */
 }
 /* line 1751, ../sass/main.scss */
@@ -19214,13 +19217,16 @@ address strong {
 /* line 2831, ../sass/main.scss */
 .instagram-btn .btn-instagram {
     position: absolute;
-    background: #000;
+    /* background: #000; */
+    background: #405DE6;  
+    background: -webkit-linear-gradient(to bottom,#405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);  
+    background: linear-gradient(to bottom,#405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
     width: 230px;
     left: 50%;
     margin-left: -115px;
     margin-top: 15px;
-    top: -51px;
-    z-index: 99;
+    top: -40px;
+    /* z-index: 99; */
     color: #fff;
     text-align: center;
     padding: 15px 0;
@@ -19229,6 +19235,7 @@ address strong {
     font-size: 12px;
     letter-spacing: 1px;
     line-height: 14px;
+    border-radius: 10px;
 }
 /* line 2847, ../sass/main.scss */
 .instagram-btn .btn-instagram i {

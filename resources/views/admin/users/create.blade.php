@@ -7,7 +7,12 @@
 <!-- menu content -->
 
 <!-- Section Title -->
-<div class="section-title" style="background: url( {{asset('img/parallax.jpg')}} );">
+<div class="section-title" style="background:url({{asset('img/parallax2.jpg')}}); 
+object-fit: cover;
+background-size: cover !important;
+background-attachment: fixed !important;
+background-position: top center !important;
+background-repeat: no-repeat !important;">
     <div class="container">
         <div class="row">
             <div class="col-md-8">

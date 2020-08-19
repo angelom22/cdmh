@@ -7,7 +7,12 @@
 <!-- End Header-->
 
 <!-- Section Title -->
-<div class="section-title big-title parallax-section" style="background:url(img/parallax.jpg);">
+<div class="section-title big-title parallax-section" style="background:url({{asset('img/parallax2.jpg')}}); 
+object-fit: cover;
+background-size: cover !important;
+background-attachment: fixed !important;
+background-position: top center !important;
+background-repeat: no-repeat !important;">
     <div class="container">
         <div class="row">
             <div class="col-md-8">
@@ -75,7 +80,7 @@
                 </div>
 
                 <div class="col-lg-5">
-                    <img src="{{asset('img/locations/about.jpg')}}" style="border-radius:10%" alt="nuestra historia">
+                    <img src="{{asset('img/locations/about.jpg')}}" style="border-radius:10px" alt="nuestra historia">
                 </div>
             </div>
 

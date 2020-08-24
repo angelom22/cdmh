@@ -38,9 +38,9 @@
                     </div>
 
                     <div class="">
-                        <!-- <textarea id="markdown" class="text-area" name="contenido" cols="100" rows="20" value="{{$articulo->contenido}}"></textarea> -->
-                        <input type="textarea" class="text-area" name="contenido" value="{{$articulo->contenido}}">
-                        <!-- <textarea value="{{$articulo->contenido}}" id="text-area" name="contenido" class="textarea wysihtml5-editor placeholder" rows="5" marginwidth="0" marginheight="0" contenteditable="true" spellcheck="true" style="background-color: rgb(255, 255, 255); color: rgb(85, 85, 85); cursor: text; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18px; letter-spacing: normal; text-align: start; text-decoration: none solid rgb(85, 85, 85); text-indent: 0px; text-rendering: auto; word-break: normal; overflow-wrap: break-word; word-spacing: 0px;"></textarea> -->
+            
+                        <textarea name="contenido" id="editor1" rows="20" cols="80">{{$articulo->contenido}} </textarea>
+                        
                     </div>
 
                     <div class="col-sm-4 col-md-8 ">
@@ -76,6 +76,7 @@
                         <div class="offset-sm-2 col-sm-10">
                             <!-- <button type="submit">enviar</button> -->
                             <input type="submit" value="Editar" id="editar" class="bnt btn-iw" style="border-radius: 5px;">
+                            <a class="btn btn-iw btn-danger" href="{{route('articulos.index')}}">Regresar</a>
                         </div>
                     </div>
 
@@ -93,6 +94,15 @@
 @endsection
 
 @section('js')
+
+<script src="{{asset('plugins/ckeditor/ckeditor/ckeditor.js')}}"></script>
+<script src="{{asset('plugins/ckeditor/ckeditor/styles.js')}}"></script>
+
+<script>
+    // Replace the <textarea id="editor1"> with a CKEditor 4
+    // instance, using default configuration.
+    CKEDITOR.replace( 'editor1' );
+</script>
 
 
 <script>

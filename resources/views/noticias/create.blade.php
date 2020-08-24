@@ -81,7 +81,8 @@
                     <div class="form-group">
                         <div class="offset-sm-2 col-sm-10">
                             <!-- <button type="submit">enviar</button> -->
-                            <input type="submit" value="Registrar" id="agregar" class="bnt btn-iw" style="border-radius: 5px;">
+                            <input type="submit" value="Publicar" id="agregar" class="bnt btn-iw" style="border-radius: 5px;">
+                            <a class="btn btn-iw btn-danger" href="{{route('articulos.index')}}">Regresar</a>
                         </div>
                     </div>
 

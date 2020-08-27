@@ -33,7 +33,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $articulos = Articulo::orderBy('id', 'DESC')->paginate(4);
+        $articulos = Articulo::orderBy('id', 'DESC')->simplePaginate(4);
         // $categorias =  Categoria::orderBy('name', 'ASC')->get();
         // dd( $articulos);
         return view('main.home', compact('articulos'));
@@ -43,7 +43,7 @@ class HomeController extends Controller
     public function filtarCategoria($name)
     {
         $categoria = Categoria::FiltrarCategoria($name)->first();
-        $articulos = $categoria->articulos()->paginate(4);
+        $articulos = $categoria->articulos()->simplePaginate(4);
         // $articulos->each(function($articulos){
         //   $articulo->categoria;
         //   $articulo->imagen;
@@ -60,7 +60,7 @@ class HomeController extends Controller
     public function filtrarEtiqueta($name)
     {
         $etiqueta = Etiqueta::FiltrarEtiqueta($name)->first();
-        $articulos = $etiqueta->articulos()->paginate(4);
+        $articulos = $etiqueta->articulos()->simplePaginate(4);
 
         $categorias =  Categoria::orderBy('name', 'ASC')->get();
         $etiquetas = Etiqueta::orderBy('name', 'ASC')->get();

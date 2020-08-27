@@ -38,7 +38,6 @@
                     </div>
 
                     <div class="">
-            
                         <textarea name="contenido" id="editor1" rows="20" cols="80">{{$articulo->contenido}} </textarea>
                         
                     </div>
@@ -60,9 +59,18 @@
                         <div class=" form-group control-label col-sm-2 col-md-6">
                             <label for="categoria">Etiquetas</label>
                             <select class="form-control chosen-select" multiple data-actions-box="true" name="etiquetas[]" id="id_etiquetas">
-                                <option value=""></option>
+                                
                                 @foreach($etiquetas as $etiqueta)
-                                <option value="{{$etiqueta->id}}">{{$etiqueta->name}}</option>
+                                <option value="{{$etiqueta->id}}"
+                                    @foreach($articulo->etiquetas as $etiq)
+                                    @if($etiqueta->id === $etiq->id)
+                                        {{'selected'}}
+                                    @endif
+                                    @endforeach>
+                                
+                                {{$etiqueta->name}}
+
+                                </option>
                                 @endforeach
                             </select>
                         </div>

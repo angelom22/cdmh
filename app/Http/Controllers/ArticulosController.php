@@ -30,7 +30,7 @@ class ArticulosController extends Controller
 
     public function index(Request $request)
     {
-        $articulos = Articulo::Buscador($request->titulo)->orderBy('id', 'DESC')->paginate(3);
+        $articulos = Articulo::Buscador($request->titulo)->orderBy('id', 'DESC')->simplePaginate(3);
         $articulos->each(function ($articulos) {
             $articulos->categoria();
             $articulos->user();
@@ -126,7 +126,7 @@ class ArticulosController extends Controller
         $etiquetas = Etiqueta::orderBy('name', 'DESC')->get();
         $Mis_Etiquetas = $articulo->etiquetas->ToArray('name');
 
-        // dd($Mis_Etiquetas);
+        // dd( $articulo->etiquetas[0]->id);
 
         return view('noticias.edit', compact('articulo', 'categorias', 'etiquetas', 'Mis_Etiquetas'));
     }

@@ -25,6 +25,7 @@ class ArticuloRequest extends FormRequest
     {
         return [
             'titulo'            => 'min:5|max:250|required|unique:articulos',
+            'extracto'     => 'required',
             'contenido'     => 'min:20|required',
             'image'             => 'image|required',
             'categoria_id'  => 'required'

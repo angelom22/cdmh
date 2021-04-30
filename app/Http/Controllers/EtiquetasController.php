@@ -22,7 +22,7 @@ class EtiquetasController extends Controller
 
     public function index(Request $request)
     {
-        $etiquetas = Etiqueta::Buscador($request->name)->orderBy('id', 'ASC')->paginate(5);
+        $etiquetas = Etiqueta::Buscador($request->name)->orderBy('id', 'ASC')->Simplepaginate(5);
         // $etiquetas = Etiqueta::get();
         return view('admin.etiquetas.index', compact('etiquetas'));
     }

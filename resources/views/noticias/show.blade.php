@@ -82,7 +82,7 @@
                     </div>
                     <img src="{{asset('img/articulos/'.$articulo->imagen->name)}}" alt="titulo de la noticia">
                     <div class="info-panel">
-                        <p>{{$articulo->contenido}}.</p>
+                        <p>{!! $articulo->contenido !!}</p>
                     </div>
                 </div>
 

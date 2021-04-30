@@ -127,7 +127,7 @@ background-repeat: no-repeat !important;">
                             <div class="col-md-8">
                                 <h5><a href="{{route('articulos.show',$articulo->slug )}}">{{$articulo->titulo}}</a></h5>
                                 <span class="data-info">{{$articulo->created_at->diffForHumans()}} / <i class="fa fa-user"></i><a href="">{{$articulo->user->name}}</a> / <i class="fa fa-folder-open-o"><a href="{{route('home.filtrar.categoria', $categoria->name)}}">{{$articulo->categoria->name}}</a></i> / <i class="fa fa-comments"></i><a href="#">0</a></span>
-                                <p>{{$articulo->contenido}}<a href="{{route('articulos.show',$articulo->slug )}}">Leer [+]</a>.</p>
+                                <p>{!! $articulo->contenido !!}<a href="{{route('articulos.show',$articulo->slug )}}">Leer [+]</a>.</p>
                                 <br>
                                 @if(Auth::check())
                                 <a href="{{route('articulos.show',$articulo->slug )}}" class="btn btn-info"><span class="glyphicon glyphicon-wrench">Ver</span>

@@ -155,6 +155,8 @@ Route::get('articulos/{id}/destroy', [
     'uses' => 'ArticulosController@destroy',
     'as' => 'articulos.destroy'
 ]);
+Route::post('articulos/{noticia}/imagen', 'FotosController@store')->name('articulo.foto.store');
+Route::delete('imagen/{foto}', 'FotosController@destroy')->name('fotos.destory');
 
 //  Acceso denegrado
 Route::get('/denied', ['as' => 'denied', function () {

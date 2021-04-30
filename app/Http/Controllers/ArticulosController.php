@@ -76,14 +76,28 @@ class ArticulosController extends Controller
             $file->move($path, $ImagenName);
         }
 
-        $articulo = new Articulo($request->all());
-        // dd($articulo);
+        $articulo = new Articulo();
+       
+        $articulo->titulo = $request->get('titulo');
+        // $noticia->url = Str::slug($request->get('titulo'));
+        $articulo->extracto = $request->get('extracto');
+        $articulo->contenido = $request->get('contenido');
+        $articulo->categoria_id = Categoria::find($cat = $request->get('categoria_id')) ? $cat : Categoria::create(['name' => $cat])->id;
         $articulo->user_id = Auth::user()->id;
-        // dd($articulo->user_id);
-        // $articulo->user_id = 2;
+        
         $articulo->save();
 
-        $articulo->etiquetas()->sync($request->etiquetas);
+        // Para guardar la etiqeutas en BD
+        $etiquetas = [];
+        foreach( $request->get('etiquetas') as $etiqueta )
+        {
+            $etiquetas[] = Etiqueta::find($etiqueta) 
+                                    ? $etiqueta 
+                                    : Etiqueta::create(['name' => $etiqueta])->id; 
+        }
+
+        $articulo->etiquetas()->attach($etiquetas);
+
 
         $image = new Image();
         $image->name = $ImagenName;

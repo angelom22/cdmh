@@ -16,7 +16,8 @@ class AddArticulosTable extends Migration
         Schema::create('articulos', function (Blueprint $table) {
             $table->id();
             $table->string('titulo', 255);
-            $table->text('contenido');
+            $table->mediumText('extracto');
+            $table->longText('contenido');
             $table->integer('user_id')->unsigned();
             $table->string('slug')->nullable();
             $table->integer('categoria_id')->unsigned();

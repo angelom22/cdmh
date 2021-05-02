@@ -133,7 +133,10 @@ body {
     font-weight: normal;
     line-height: 1.5;
     color: #212529;
-    background-color: #fff;
+    /* background-color: #fff; */
+    background-color: #fdfcff;
+background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2304000a' fill-opacity='0.23' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E") !important ;
+    
 }
 
 /* line 67, ../sass/bootstrap/_reboot.scss */
@@ -282,7 +285,8 @@ pre,
 code,
 kbd,
 samp {
-    font-family: monospace, monospace;
+    font-family: "Montserrat", sans-serif;
+    /* font-family: monospace, monospace; */
     font-size: 1em;
 }
 
@@ -680,8 +684,9 @@ code,
 kbd,
 pre,
 samp {
-    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
-        monospace;
+    font-family: "Montserrat", sans-serif;
+    /* font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+        monospace; */
 }
 
 /* line 10, ../sass/bootstrap/_code.scss */
@@ -11487,6 +11492,7 @@ html.mm-opening .mm-slideout {
     -ms-touch-action: pan-y;
     touch-action: pan-y;
     -webkit-tap-highlight-color: transparent;
+    margin-left: 20px;
 }
 
 /* line 19, ../sass/_partials/_slick.scss */

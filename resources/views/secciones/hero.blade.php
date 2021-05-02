@@ -4,7 +4,8 @@ object-fit: cover;
 background-size: cover !important;
 background-attachment: fixed !important;
 background-position: top center !important;
-background-repeat: no-repeat !important;">
+background-repeat: no-repeat !important;
+height:100vh">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 no-margin">

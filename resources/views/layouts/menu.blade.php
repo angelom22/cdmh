@@ -115,9 +115,9 @@
                                             </div>
 
                                             <div class="col-md-3">
-                                                <h5><i class="fa fa-gamepad" aria-hidden="true"></i> Resultados</h5>
+                                                <h5><i class="fa fa-gamepad" aria-hidden="true"></i> Miltimedia</h5>
                                                 <div class="img-hover">
-                                                    <img src="{{asset('img/blog/1.jpg')}}" alt="imagen resultados" class="img-responsive">
+                                                    <img src="{{asset('img/blog/1.jpg')}}" alt="imagen multimedia" class="img-responsive">
                                                     <div class="overlay"><a href="#">+</a></div>
                                                 </div>
                                             </div>
@@ -126,7 +126,7 @@
                                 </li>
 
                                 <li class="current">
-                                    <a href="#">Multimedia</a>
+                                    <a href="#">Sponsors</a>
                                 </li>
 
                                 <li class="current">

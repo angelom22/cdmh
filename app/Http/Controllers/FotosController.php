@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Articulo;
-use App\Model\Image;
+use App\Model\Imagen;
 use Illuminate\Support\Facades\Storage;
 
 class FotosController extends Controller
@@ -17,25 +17,17 @@ class FotosController extends Controller
         ]);
 
         // Manipulación de imagen
-        if (request()->file('file')) {
-            $file = request()->file('file');
-            $ImagenName = 'CDHM_'  . time() .  '.' . $file->getClientOriginalExtension();
-            $path = public_path() . '/img/articulos';
-            $file->move($path, $ImagenName);
-        }
+        $file = request()->file('file')->store('public/articulos/'.$request->titulo);
 
-        //obtenemos el campo file definido en el formulario
-        // $foto = request()->file('file')->store('/img/articulos/'.$articulo->titulo);
-
-        $img = Image::create([
-            'name' => $ImagenName,
-            'articulo_id' => 5
+        $img = Imagen::create([
+            'name' => Storage::url($file),
+            'articulo_id' => $articulo->id
         ]);
         
         // optimización de la imagen
         $image = Image::make(Storage::get($img))
-                        ->widen(600)
-                        // ->limitColors(255)
+                        // ->widen(600)
+                        ->resize(1080, 1080)
                         ->encode();
 
         // se reemplaza la imagen que subio el usuario por la imagen optimizada
@@ -46,7 +38,6 @@ class FotosController extends Controller
 
     public function destroy(Foto $foto) 
     {
-       
         $foto->delete();
 
         $fotoRuta = str_replace('storage', 'public', $foto->url);

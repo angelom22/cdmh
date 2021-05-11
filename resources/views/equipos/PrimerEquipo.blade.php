@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('css')
+    <!-- jconfirm -->
+    <link rel="stylesheet" href="/css/jconfirm/JConfirm.min.css">
+@endsection
+
 @section('content')
 
 <!-- Header-->
@@ -111,87 +116,48 @@
                             </div>
 
                             <!--Items Club News -->
-                            <!-- <div class="row">
-                                          <div class="col-md-12">
-                                              <h3 class="clear-title">Noticial del Primer Equipo</h3>
-                                          </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3 class="clear-title">Noticias del Primer Equipo</h3>
+                                </div>
+                                @foreach($articulos as $articulo )
+                                    <div class="col-lg-6 col-xl-4">
 
-
-                                          <div class="col-lg-6 col-xl-4">
-
-                                                <div class="panel-box">
-                                                    <div class="titles no-margin">
-                                                        <h4><a href="#">World football's dates.</a></h4>
-                                                    </div>
-                                                    <a href="#"><img src="img/blog/1.jpg" alt=""></a>
-                                                    <div class="row">
-                                                       <div class="info-panel">
-                                                            <p>Fans from all around the world can apply for 2018 FIFA World Cup™ tickets as the first window of sales.</p>
-                                                       </div>
-                                                    </div>
+                                        <div class="panel-box">
+                                            <div class="titles no-margin">
+                                                <h4><a href="{{route('articulos.show',$articulo->slug )}}">{{$articulo->titulo}}</a></h4>
+                                            </div>
+                                            <a href="{{route('articulos.show',$articulo->slug )}}"><img src="{{asset('img/articulos/'.$articulo->imagen->name)}}" alt="$articulo->titulo"></a>
+                                            <div class="row">
+                                                <div class="info-panel">
+                                                    <p>{{$articulo->extracto}}</p>
                                                 </div>
+                                            </div>
+                                        </div>
 
-                                           </div>
+                                    </div>
+                                @endforeach
 
-
-
-                                          <div class="col-lg-6 col-xl-4">
-
-                                                <div class="panel-box">
-                                                    <div class="titles no-margin">
-                                                        <h4><a href="#">Mbappe’s year to remember</a></h4>
-                                                    </div>
-                                                    <a href="#"><img src="img/blog/2.jpg" alt=""></a>
-                                                    <div class="row">
-                                                       <div class="info-panel">
-                                                            <p>Tickets may be purchased online by using Visa payment cards or Visa Checkout. Visa is the official.</p>
-                                                       </div>
-                                                    </div>
-                                                </div>
-
-                                           </div>
-
-
-
-                                          <div class="col-lg-6 col-xl-4">
-
-                                                <div class="panel-box">
-                                                    <div class="titles no-margin">
-                                                        <h4><a href="#">Egypt are one family</a></h4>
-                                                    </div>
-                                                    <a href="#"><img src="img/blog/3.jpg" alt=""></a>
-                                                    <div class="row">
-                                                       <div class="info-panel">
-                                                            <p>Successful applicants who have applied for supporter tickets and conditional supporter tickets will.</p>
-                                                       </div>
-                                                    </div>
-                                                </div>
-
-                                           </div>
-
-                                       </div> -->
-
-
+                            </div>
 
                             <!--Items Club video -->
                             <!-- <div class="row no-line-height">
-                                          <div class="col-md-12">
-                                              <h3 class="clear-title">Videos del Primer Equipo</h3>
-                                          </div>
+                                <div class="col-md-12">
+                                    <h3 class="clear-title">Videos del Primer Equipo</h3>
+                                </div>
 
+                                <div class="col-lg-6 col-xl-4">
 
-                                          <div class="col-lg-6 col-xl-4">
+                                    <div class="panel-box">
+                                        <div class="titles no-margin">
+                                            <h4><a href="#">Torneo</a></h4>
+                                        </div>
+                                        <iframe class="video" src="https://www.youtube.com/embed/Ln8rXkeeyP0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                                    </div>
 
-                                                <div class="panel-box">
-                                                    <div class="titles no-margin">
-                                                        <h4><a href="#">Torneo</a></h4>
-                                                    </div>
-                                                    <iframe class="video" src="https://www.youtube.com/embed/Ln8rXkeeyP0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-                                                </div>
+                                </div>
 
-                                           </div>
-
-                                       </div> -->
+                            </div> -->
                             <!--End Items Club video -->
 
                             <!--Sponsors CLub -->
@@ -202,7 +168,7 @@
                             </div>
                             <!--End Sponsors CLub -->
 
-                            <ul class="sponsors-carousel">
+                            <ul class="sponsors-carousel col-xl-12 col-md-12">
                                 <li><a href="#"><img src="{{asset('img/sponsors/AlcaldiaHatillo.png')}}" alt="alcaldia del hatillo"></a></li>
                                 <li><a href="#"><img src="{{asset('img/sponsors/LogoTipografiaOlympia.png')}}" alt="colaborador 1"></a></li>
                                 <li><a href="#"><img src="{{asset('img/sponsors/logoveneztec.png')}}" alt="colaborador 2"></a></li>
@@ -210,18 +176,22 @@
                                 <li><a href="#"><img src="{{asset('img/sponsors/sponsor03.png')}}" alt="colaborador 4"></a></li>
                                 <li><a href="#"><img src="{{asset('img/sponsors/sponsor02.png')}}" alt="colaborador 5"></a></li>
                                 <li><a href="#"><img src="{{asset('img/sponsors/sponsor04.png')}}" alt="colaborador 6"></a></li>
+                                <li><a href="#"><img src="{{asset('img/sponsors/sponsor05.png')}}" alt="colaborador 6"></a></li>
                             </ul>
 
                         </div>
                         <!-- Tab One - overview -->
 
+                        
+
                         <!-- Tab Two - equipo -->
                         <div class="tab-pane" id="equipo">
                             <div class="row">
                                 <div class="col-xl-4 col-lg-6 col-md-6">
+                                    @foreach($jugadores as $jugador)
                                     <div class="item-player">
                                         <div class="head-player">
-                                            <img src="{{asset('img/players/stefano.jpg')}}" alt="location-team">
+                                            <img src="{{$jugador->foto}}" alt="{{$jugador->nombre}}">
                                             <div class="overlay"><a href="#">+</a></div>
                                         </div>
                                         <div class="info-player">
@@ -229,21 +199,35 @@
                                                 10
                                             </span>
                                             <h4>
-                                                Stefano Osuna
-                                                <span>Delantero</span>
+                                                {{$jugador->nombre}}
+                                                <span>{{$jugador->posicion}}</span>
                                             </h4>
                                             <ul>
                                                 <li>
-                                                    <strong>NACIONALIDAD:</strong> <span>Venezolano</span>
+                                                    <strong>NACIONALIDAD:</strong> <span>{{$jugador->nacionalidad}}</span>
                                                 </li>
-                                                <li><strong>EDAD:</strong> <span>26</span></li>
-                                                <li><strong>PARTIDOS:</strong> <span>60</span></li>
-                                                <li><strong>GOLES:</strong> <span>1</span></li>
+                                                <li><strong>EDAD:</strong> <span>{{$jugador->edad}}</span></li>
+                                                <li><strong>PARTIDOS:</strong> <span>{{$jugador->partidos}}</span></li>
+                                                <li><strong>GOLES:</strong> <span>{{$jugador->goles}}</span></li>
                                             </ul>
                                         </div>
-                                        <!-- <a href="#" class="btn">View Player <i class="fa fa-angle-right" aria-hidden="true"></i></a> -->
+                                        @if(Auth::check())
+                                            @if(Auth::user()->Admin() == 'admin')
+                                            <a href="{{route('JugadorEdit', $jugador->id)}}" class="btn btn-success"><span class="glyphicon glyphicon-wrench">Editar</span>
+                                            </a>
+                                            
+                                            <a  class="btn btn-danger delete-record" 
+                                                data-route="{{ route('jugador.destroy', ['jugador' => $jugador->id]) }}"  
+                                                href="#" >Eliminar</a>
+                                           
+                                            <a href="#" class="btn">Ver ficha <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                            @endif
+                                        @endif
                                     </div>
+                                    @endforeach
                                 </div>
+
+                                
 
                                 <!-- <div class="col-xl-4 col-lg-6 col-md-6">
                                     <div class="item-player">
@@ -887,16 +871,6 @@
                                                 Goles
                                                 <h3>85</h3>
                                             </li>
-
-                                            <!-- <li>
-                                                Gole
-                                                <h3>1,170</h3>
-                                            </li>
-
-                                            <li>
-                                                Clean Sheets
-                                                <h3>226</h3>
-                                            </li> -->
                                         </ul>
                                     </div>
                                 </div>
@@ -1024,7 +998,7 @@
                 <!-- Side info single team-->
                 <div class="col-lg-3 padding-top-mini">
 
-                    <!-- <div class="panel-box">
+                    <div class="panel-box">
                         <div class="titles">
                             <h4><i class="fa fa-calendar"></i>Calendario</h4>
                         </div>
@@ -1033,15 +1007,15 @@
                         <ul class="list-diary">
 
                             <li>
-                                <h6>GROUP A <span>14 JUN 2018 - 18:00</span></h6>
+                                <h6>Copa Pretemporada Woman Day <span>14 MAY 2021 - 18:00</span></h6>
                                 <ul class="club-logo">
                                     <li>
-                                        <img src="img/clubs-logos/rusia.png" alt="">
-                                        <span>RUSSIA</span>
+                                        <img src="/img/clubs-logos/logo.png" alt="logo club">
+                                        <span>CDMH</span>
                                     </li>
                                     <li>
                                         <img src="img/clubs-logos/arabia.png" alt="">
-                                        <span>SAUDI ARABIA</span>
+                                        <span>Visita</span>
                                     </li>
                                 </ul>
                             </li>
@@ -1049,7 +1023,7 @@
 
                         </ul>
 
-                    </div> -->
+                    </div>
                     <!-- End Diary -->
 
                     <!-- Video presentation -->
@@ -1097,5 +1071,12 @@
 <!-- End Section Area -  Content Central -->
 
 @include('secciones.siguenosInstagram')
+
+@endsection
+
+
+@section('js')
+
+<script src="{{asset('js/functions.js')}}"></script>
 
 @endsection

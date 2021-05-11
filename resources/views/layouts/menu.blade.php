@@ -14,7 +14,7 @@
                             <!-- Menu-->
                             <ul class="sf-menu" id="menu">
                                 <li class="current">
-                                    <a href="#">Club</a>
+                                    <a href="#">CLUB</a>
                                     <ul class="sub-current">
                                         <li>
                                             <a href="{{url ('about')}}">Nosotros</a>
@@ -27,7 +27,7 @@
 
 
                                 <li class="current">
-                                    <a href="#">Primer Equipo</a>
+                                    <a href="#">PRIMER EQUIPO</a>
                                     <ul class="sub-current">
                                         <li>
                                             <a href="{{route('PrimerEquipo')}}">Plantilla</a>
@@ -40,7 +40,7 @@
                                 </li>
 
                                 <li class="current">
-                                    <a href="#">Juveniles</a>
+                                    <a href="#">JUVENILES</a>
                                     <ul class="sub-current">
                                         <li>
                                             <a href="{{route('sub20')}}">Sub20</a>
@@ -61,7 +61,7 @@
                                 </li>
 
                                 <li class="current">
-                                    <a href="#">Fútbol Base</a>
+                                    <a href="#">FUTBOL BASE</a>
                                     <ul class="sub-current">
                                         <li>
                                             <a href="{{url('futbase')}}">Sub14</a>
@@ -71,6 +71,9 @@
                                         </li>
                                         <li>
                                             <a href="{{route('home.filtrar.categoria', 'Fútbol Base')}}">Noticias</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Inscripción</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -84,7 +87,7 @@
                                 
 
                                 <li>
-                                    <a href="#">Campeonatos</a>
+                                    <a href="#">CAMPEONATOS</a>
                                     <div class="sf-mega">
                                         <div class="row">
                                             <div class="col-md-3">
@@ -115,7 +118,7 @@
                                             </div>
 
                                             <div class="col-md-3">
-                                                <h5><i class="fa fa-gamepad" aria-hidden="true"></i> Miltimedia</h5>
+                                                <h5><i class="fa fa-gamepad" aria-hidden="true"></i> Multimedia</h5>
                                                 <div class="img-hover">
                                                     <img src="{{asset('img/blog/1.jpg')}}" alt="imagen multimedia" class="img-responsive">
                                                     <div class="overlay"><a href="#">+</a></div>
@@ -126,15 +129,15 @@
                                 </li>
 
                                 <li class="current">
-                                    <a href="#">Sponsors</a>
+                                    <a href="{{url('sponsors')}}" >SPONSORS</a>
                                 </li>
 
                                 <li class="current">
-                                    <a href="#">Calendario</a>
+                                    <a href="#">CALENDARIO</a>
                                 </li>
 
                                 <li class="current">
-                                    <a href="{{ url('contacto') }}">Contacto</a>
+                                    <a href="{{ url('contacto') }}">CONTACTO</a>
                                 </li>
                             </ul>
                             <!-- End Menu-->

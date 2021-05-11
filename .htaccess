@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^cdmh.veneztec.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^cdmh.veneztec.com$
+RewriteCond %{REQUEST_URI} !cdmh.veneztec.com/public/
+RewriteRule (.*) /cdmh.veneztec.com/public/$1 [L]

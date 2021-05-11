@@ -40,7 +40,7 @@ class Articulo extends Model
 
     protected $table = 'articulos';
 
-    protected $fillable = ['titulo', 'contenido', 'user_id', 'slug', 'categoria_id'];
+    protected $fillable = ['titulo', 'extracto', 'contenido', 'user_id', 'slug', 'categoria_id'];
 
 
     public function categoria()
@@ -55,7 +55,7 @@ class Articulo extends Model
 
     public function imagen()
     {
-        return $this->hasOne('App\Model\Image');
+        return $this->hasOne('App\Model\Imagen');
     }
 
     public function etiquetas()

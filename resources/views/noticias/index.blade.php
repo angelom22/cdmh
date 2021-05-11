@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('css')
+    <!-- jconfirm -->
+    <link rel="stylesheet" href="/css/jconfirm/JConfirm.min.css">
+@endsection
+
 @section('content')
 
 <!-- menu content -->
@@ -120,24 +125,24 @@ background-repeat: no-repeat !important;">
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="img-hover">
-                                    <img src="{{asset('img/articulos/'.$articulo->imagen->name)}}" alt="titulo de la noticia" class="img-responsive">
+                                    <img src="{{$articulo->imagen->name}}" alt="titulo de la noticia" class="img-responsive">
                                     <div class="overlay"><a href="{{route('articulos.show',$articulo->slug )}}">+</a></div>
                                 </div>
                             </div>
                             <div class="col-md-8">
                                 <h5><a href="{{route('articulos.show',$articulo->slug )}}">{{$articulo->titulo}}</a></h5>
-                                <span class="data-info">{{$articulo->created_at->diffForHumans()}} / <i class="fa fa-user"></i><a href="">{{$articulo->user->name}}</a> / <i class="fa fa-folder-open-o"><a href="{{route('home.filtrar.categoria', $categoria->name)}}">{{$articulo->categoria->name}}</a></i> / <i class="fa fa-comments"></i><a href="#">0</a></span>
+                                <span class="data-info">{{$articulo->created_at->diffForHumans()}} / <i class="fa fa-user"></i><a href="">{{$articulo->user->name}}</a> / <i class="fa fa-folder-open-o"><a href="{{route('home.filtrar.categoria', $categoria->name)}}">{{$articulo->categoria->name}}</a></i> </span>
                                 <p>{!! $articulo->contenido !!}<a href="{{route('articulos.show',$articulo->slug )}}">Leer [+]</a>.</p>
                                 <br>
                                 @if(Auth::check())
                                 <a href="{{route('articulos.show',$articulo->slug )}}" class="btn btn-info"><span class="glyphicon glyphicon-wrench">Ver</span>
                                 </a>
+                                @if(Auth::user()->Admin() == 'admin')
                                 <a href="{{route('ArticuloEdit', $articulo->id)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench">Editar</span>
                                 </a>
-                                @if(Auth::user()->Admin() == 'admin')
-                                <form style="display:inline" method="DELETE" action="{{route('articulos.destroy', $articulo->id)}}">
-                                    <button onclick="return confirm('¿Esta seguro que desea eliminar?')" class="btn btn-danger" type="submit">Eliminar</button>
-                                </form>
+                                
+                                <a data-route="{{route('articulo.destroy', ['articulo' => $articulo->id]) }}" class="btn btn-danger delete-record" href="#" >Eliminar</a>
+                                
                                 @endif
                                 @endif
                             </div>
@@ -164,5 +169,11 @@ background-repeat: no-repeat !important;">
 </section>
 
 @include('secciones.siguenosInstagram')
+
+@endsection
+
+@section('js')
+
+<script src="{{asset('/js/functions.js')}}"></script>
 
 @endsection

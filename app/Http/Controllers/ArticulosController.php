@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use  Laracasts\Flash\Flash;
-use App\Model\Articulo;
-use App\Model\Categoria;
-use App\Model\Etiqueta;
-use App\Model\Image;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 use App\Http\Requests\ArticuloRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use Laracasts\Flash\Flash;
+use App\Model\Categoria;
+use App\Model\Articulo;
+use App\Model\Etiqueta;
+use App\Model\Imagen;
+use Carbon\Carbon;
 use App\User;
-use  Carbon\Carbon;
 
 class ArticulosController extends Controller
 {
@@ -69,25 +71,19 @@ class ArticulosController extends Controller
         // dd($request->etiquetas);
 
         // Manipulación de imagen
-        if ($request->file('image')) {
-            $file = $request->file('image');
-            $ImagenName = 'CDHM_'  . time() .  '.' . $file->getClientOriginalExtension();
-            $path = public_path() . '/img/articulos';
-            $file->move($path, $ImagenName);
-        }
+        $file = request()->file('image')->store('public/articulos/'.$request->titulo);
 
+        // Se crea el contenido del articulo
         $articulo = new Articulo();
-       
         $articulo->titulo = $request->get('titulo');
         // $noticia->url = Str::slug($request->get('titulo'));
         $articulo->extracto = $request->get('extracto');
         $articulo->contenido = $request->get('contenido');
         $articulo->categoria_id = Categoria::find($cat = $request->get('categoria_id')) ? $cat : Categoria::create(['name' => $cat])->id;
         $articulo->user_id = Auth::user()->id;
-        
         $articulo->save();
 
-        // Para guardar la etiqeutas en BD
+        // Para guardar la etiquetas en BD
         $etiquetas = [];
         foreach( $request->get('etiquetas') as $etiqueta )
         {
@@ -96,13 +92,26 @@ class ArticulosController extends Controller
                                     : Etiqueta::create(['name' => $etiqueta])->id; 
         }
 
+        // Se guardan la etiquetas asociadas al articulo
         $articulo->etiquetas()->attach($etiquetas);
 
 
-        $image = new Image();
-        $image->name = $ImagenName;
-        $image->articulo()->associate($articulo);
-        $image->save();
+        // $img = new Imagen();
+        // $img->name = Storage::url($file);
+        // $img->articulo()->associate($articulo);
+        // $img->save();
+
+        // Se guarda la foto en la tabla imagenes
+        $img = Imagen::create([
+            'name' => Storage::url($file),
+            'articulo_id' => $articulo->id
+        ]);
+        
+        // optimización de la imagen
+        $image = Image::make( Storage::get($file) )->resize(1080, 1080)->encode();
+        
+        // se reemplaza la imagen que subio el usuario por la imagen optimizada
+        Storage::put($img->name, (string) $image);
 
         Flash("Se ha creado el artículo " . $articulo->titulo .  " de forma correcta")->success();
 
@@ -171,13 +180,30 @@ class ArticulosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Articulo $articulo)
     {
-        $articulo = Articulo::find($id);
-        $articulo->delete();
+        
+        try {
+            if (request()->ajax()) {
 
-        Flash("Se ha eliminado el artículo " . $articulo->titulo .  " de forma correcta")->error();
+                $fotoRuta = str_replace('storage', 'public', $articulo->imagen->name);
 
-        return redirect()->route('articulos.index');
+                Storage::delete($fotoRuta);
+
+                $articulo->delete();
+
+                Flash("Se ha eliminado el artículo " . $articulo->titulo .  " de forma correcta")->success();
+
+                return redirect()->route('articulos.index');
+            } else {
+                abort(401);
+            }
+        } catch (\Exception $exception) {
+            session()->flash("message", ["danger", $exception->getMessage()]);
+        }
+
+        // $articulo = Articulo::find($id);
+        // $articulo->delete();
+
     }
 }

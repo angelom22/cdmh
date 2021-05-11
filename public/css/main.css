@@ -10413,7 +10413,7 @@ a.text-dark:hover {
 .sf-menu > li > a {
     text-decoration: none;
     display: block;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: normal;
     color: #000;
 }
@@ -11674,6 +11674,9 @@ html.mm-opening .mm-slideout {
 /* line 185, ../sass/_partials/_slick.scss */
 .sponsors-carousel {
     padding: 0 20px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    background-color: #fff;
     
 }
 /* line 189, ../sass/_partials/_slick.scss */
@@ -16013,7 +16016,7 @@ header {
 /* line 388, ../sass/main.scss */
 header .logo img {
     max-width: 100%;
-    max-height: 5em;
+    max-height: 4em;
 }
 /* line 393, ../sass/main.scss */
 header .adds img {
@@ -16110,7 +16113,7 @@ header .mobile-nav:hover {
 
 /* line 461, ../sass/main.scss */
 .header-2 .sf-menu > li > a {
-    font-size: 14px;
+    font-size: 13px;
 }
 
 /* line 464, ../sass/main.scss */
@@ -16292,7 +16295,7 @@ header .mobile-nav:hover {
 
 /* line 461, ../sass/main.scss */
 .header-5 .sf-menu > li > a {
-    font-size: 14px;
+    font-size: 13px;
 }
 
 /* line 464, ../sass/main.scss */

@@ -143,6 +143,23 @@
     <!-- <script type="text/javascript" src="{{asset('plugins/markitup/jquery.markitup.js')}}"></script>
     <script type="text/javascript" src="{{asset('plugins/markitup/sets/markdown/set.js')}}"></script> -->
 
+    <!-- jconfirm -->
+    <script src="{{asset('/js/jconfirm/JConfirm.min.js')}}"></script>
+
+    <script>
+        $(document).ready(function() {
+        $.jConfirm.defaults.question = '{{ __("¿Estás seguro?") }}';
+        $.jConfirm.defaults.confirm_text = '{{ __("Sí") }}';
+        $.jConfirm.defaults.deny_text = '{{ __("No") }}';
+        $.jConfirm.defaults.position = 'top';
+        $.jConfirm.defaults.theme = 'black';
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    });
+    </script>
 
     <!-- Contenido JS Personales -->
     @yield('js')

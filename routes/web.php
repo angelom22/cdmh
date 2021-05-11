@@ -148,13 +148,14 @@ Route::resource('articulos', 'ArticulosController')->names([
     'update'   => 'ArticuloUpdate',
     'create'     => 'ArticuloCreate',
     'store'       => 'ArticuloStore',
-    'edit'         => 'ArticuloEdit'
+    'edit'         => 'ArticuloEdit',
+    'destroy'       => 'ArticuloDestroy'
 ]);
-
-Route::get('articulos/{id}/destroy', [
-    'uses' => 'ArticulosController@destroy',
-    'as' => 'articulos.destroy'
-]);
+Route::delete('/articulos/{articulo}/destroy', 'ArticulosController@destroy')->name('articulo.destroy');
+// Route::delete('articulos/{id}/destroy', [
+//     'uses' => 'ArticulosController@destroy',
+//     'as' => 'articulos.destroy'
+// ]);
 Route::post('articulos/{noticia}/imagen', 'FotosController@store')->name('articulo.foto.store');
 Route::delete('imagen/{foto}', 'FotosController@destroy')->name('fotos.destory');
 
@@ -162,3 +163,18 @@ Route::delete('imagen/{foto}', 'FotosController@destroy')->name('fotos.destory')
 Route::get('/denied', ['as' => 'denied', function () {
     return view('errors.403');
 }]);
+
+
+// Ruta sponsors
+Route::get('sponsors', function () {
+    return view('sponsors.index');
+});
+
+// Ruta registro jugador
+Route::resource('jugador', 'JugadoresController')->names([
+    'update'   => 'JugadorUpdate',
+    'create'     => 'JugadorCreate',
+    'store'       => 'JugadorStore',
+    'edit'         => 'JugadorEdit',
+]);
+Route::delete('/jugador/{jugador}/destroy', 'JugadoresController@destroy')->name('jugador.destroy');

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Model\Articulo;
+use App\Model\Categoria;
+use App\Model\Jugadores;
 
 class EquipoController extends Controller
 {
@@ -14,7 +17,11 @@ class EquipoController extends Controller
 
     public function PrimerEquipo()
     {
-        return view('equipos.PrimerEquipo');
+        $jugadores = Jugadores::where('categoria_jugador', '=', 'Primera')->simplepaginate(11);
+        // dd($jugadores);
+        $articulos = Articulo::where('categoria_id', '=', 2)->simplepaginate(3);
+    
+        return view('equipos.PrimerEquipo', compact('jugadores','articulos'));
     }
 
     public function EquipoFilial()
@@ -24,6 +31,7 @@ class EquipoController extends Controller
 
     public function EquipoSub20()
     {
+
         return view('equipos.Sub20');
     }
 

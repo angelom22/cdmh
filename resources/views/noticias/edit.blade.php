@@ -97,14 +97,10 @@
                 <div class="row">
                     <div class="col-md-12">
                         
-                        <form action="#" method="POST">
-                        @csrf
-                        @method('DELETE')
-                            <div class="col-md-12">
-                                <button class="btn btn-danger btn-sm" style="position:absolute"><i class="fas fas-remove"></i>x</button>
-                                <img class="card-img-top img-responsive" src="{{asset('img/articulos/'.$articulo->imagen->name)}}" alt="">
-                            </div>
-                        </form>
+                        <div class="col-md-12">
+                            
+                            <img class="card-img-top img-responsive" src="{{$articulo->imagen->name}}" alt="">
+                        </div>
                              
                     </div>  
                 </div>
@@ -171,17 +167,7 @@
         ]
     });
 
-    // Dropzone
-    // new Dropzone('.dropzone', {
-    //     url:'/noticias/{noticia}/fotos',
-    //     headers:{
-    //         // 'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content')
-    //         'X-CSRF-TOKEN': '{{ csrf_token() }}'
-    //     },
-    //     dictDefaultMessage: 'Arrastre las fotos aqui para subirlas'
-    // });
-    
-    // Dropzone.autoDiscover = false;
+ 
 
     //Initialize Select2 Elements
     $('.select2').select2()
@@ -194,34 +180,6 @@
     });
 
     </script>
-
-<script>
-    // Replace the <textarea id="editor1"> with a CKEditor 4
-    // instance, using default configuration.
-    // CKEDITOR.replace( 'editor1' );
-</script>
-
-
-<script>
-    // // Selectores Multiples
-    // $(".chosen-select").chosen({
-    //     disable_search_threshold: 10,
-    //     placeholder_text_multiple: 'Seleccione las etiquetas',
-    //     max_selected_options: 5,
-    //     search_contains: true,
-    //     no_results_text: 'No se encontro etiqueta',
-    // });
-
-    // $(".select-categoria").chosen({
-    //     placeholder_text_single: 'Selecciones una categoría'
-    // });
-</script>
-
-
-<!-- <script>
-    // Plugins para el textarea
-    $('.text-area').trumbowyg();
-</script> -->
 
 
 @endsection

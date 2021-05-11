@@ -21,13 +21,13 @@ height:100vh">
                                     <div class="col">
                                         <h4>
                                             <span>Fecha</span>
-                                            30 JUL 2020
+                                            01 MAY 2021
                                         </h4>
                                     </div>
                                     <div class="col">
                                         <h4>
                                             <span>Catagoría</span>
-                                            Primera
+                                            SUB20
                                         </h4>
                                     </div>
                                 </div>
@@ -43,18 +43,18 @@ height:100vh">
                                         </a>
                                     </div>
                                     <div class="col">
-                                        <strong>3</strong>
+                                        <strong>1</strong>
                                     </div>
                                     <div class="col">
                                         <strong>Vs</strong>
                                         <span>Final</span>
                                     </div>
                                     <div class="col">
-                                        <strong>0</strong>
+                                        <strong>1</strong>
                                     </div>
                                     <div class="col">
                                         <a href="#">
-                                            <img src="{{asset('img/clubs-logos/BARUTA.png')}}" alt="logo de la visita">
+                                            <img src="{{asset('img/clubs-logos/HERMANDAD-GALLEGA.png')}}" alt="logo de la visita">
                                             <span>Visita</span>
                                         </a>
                                     </div>

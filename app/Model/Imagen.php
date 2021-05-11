@@ -4,7 +4,7 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Image extends Model
+class Imagen extends Model
 {
     protected $table = 'images';
 

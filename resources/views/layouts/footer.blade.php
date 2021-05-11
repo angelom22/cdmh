@@ -42,7 +42,7 @@
             </li>
             <li>
                 <div>
-                    <a href="#" class="youtube" target="_blank">
+                    <a href="https://www.youtube.com/channel/UC9uUsKzOYlTdi1b_Qkbiqcw/featured" class="youtube" target="_blank">
                         <i class="fa fa-youtube"></i>
                     </a>
                 </div>
@@ -93,6 +93,9 @@
                                         </li>
                                         <li>
                                             <a class="nav-link" href="{{route('etiquetas.index')}}">Etiquetas</a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link" href="jugador/create">Jugadores</a>
                                         </li>
                                         <li>
                                             <a class="nav-link" href="{{route('usuarios.index')}}">Usuarios</a>

@@ -98,6 +98,9 @@
                                             <a class="nav-link" href="jugador/create">Jugadores</a>
                                         </li>
                                         <li>
+                                            <a class="nav-link" href="galeria/create">Galería</a>
+                                        </li>
+                                        <li>
                                             <a class="nav-link" href="{{route('usuarios.index')}}">Usuarios</a>
                                         </li>
                                         <li>

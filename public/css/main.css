@@ -16639,7 +16639,7 @@ iframe.big-video {
 /* line 739, ../sass/main.scss */
 .hero-header.hero-bg .box-start .horizontal-next-teams img {
     display: block;
-    max-width: 60px;
+    /* max-width: 60px; */
     margin: 0 auto 5px auto;
 }
 /* line 744, ../sass/main.scss */
@@ -19659,7 +19659,7 @@ table.career tr td img {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.2);
     -webkit-transition: 0.3s all ease;
     -moz-transition: 0.3s all ease;
     -o-transition: 0.3s all ease;

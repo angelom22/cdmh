@@ -84,9 +84,10 @@
                     <!-- Nav Tabs -->
                     <ul class="nav nav-tabs" id="myTab">
                         <li class="active"><a href="#overview" data-toggle="tab">General</a></li>
-                        <li><a href="#equipo" data-toggle="tab">Equipo</a></li> 
+                        <li><a href="#equipo" data-toggle="tab">Plantilla</a></li> 
                         <li><a href="#partido" data-toggle="tab">Partidos</a></li>
                         <li><a href="#resultados" data-toggle="tab">Resultados</a></li>
+                        <li><a href="#tabla" data-toggle="tab">Posiciones</a></li>
                         <li><a href="#estadistica" data-toggle="tab">Estadísticas</a></li>
                     </ul>
                     <!-- End Nav Tabs -->
@@ -127,7 +128,7 @@
                                             <div class="titles no-margin">
                                                 <h4><a href="{{route('articulos.show',$articulo->slug )}}">{{$articulo->titulo}}</a></h4>
                                             </div>
-                                            <a href="{{route('articulos.show',$articulo->slug )}}"><img src="{{asset('img/articulos/'.$articulo->imagen->name)}}" alt="$articulo->titulo"></a>
+                                            <a href="{{route('articulos.show',$articulo->slug )}}"><img src="{{asset($articulo->imagen->name)}}" alt="$articulo->titulo"></a>
                                             <div class="row">
                                                 <div class="info-panel">
                                                     <p>{{$articulo->extracto}}</p>
@@ -229,7 +230,7 @@
 
                                 
 
-                                <!-- <div class="col-xl-4 col-lg-6 col-md-6">
+                                <div class="col-xl-4 col-lg-6 col-md-6">
                                     <div class="item-player">
                                         <div class="head-player">
                                             <img src="img/players/2.jpg" alt="location-team">
@@ -245,7 +246,7 @@
                                             </h4>
                                             <ul>
                                                 <li>
-                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span
+                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span>
                                                 </li>
                                                 <li><strong>MATCHES:</strong> <span>90</span></li>
                                                 <li><strong>AGE:</strong> <span>28</span></li>
@@ -271,7 +272,7 @@
                                             </h4>
                                             <ul>
                                                 <li>
-                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span
+                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span>
                                                 </li>
                                                 <li><strong>MATCHES:</strong> <span>90</span></li>
                                                 <li><strong>AGE:</strong> <span>28</span></li>
@@ -297,7 +298,7 @@
                                             </h4>
                                             <ul>
                                                 <li>
-                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span
+                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span>
                                                 </li>
                                                 <li><strong>MATCHES:</strong> <span>90</span></li>
                                                 <li><strong>AGE:</strong> <span>28</span></li>
@@ -323,7 +324,7 @@
                                             </h4>
                                             <ul>
                                                 <li>
-                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span
+                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span>
                                                 </li>
                                                 <li><strong>MATCHES:</strong> <span>90</span></li>
                                                 <li><strong>AGE:</strong> <span>28</span></li>
@@ -349,7 +350,7 @@
                                             </h4>
                                             <ul>
                                                 <li>
-                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span
+                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span>
                                                 </li>
                                                 <li><strong>MATCHES:</strong> <span>90</span></li>
                                                 <li><strong>AGE:</strong> <span>28</span></li>
@@ -375,7 +376,7 @@
                                             </h4>
                                             <ul>
                                                 <li>
-                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span
+                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span>
                                                 </li>
                                                 <li><strong>MATCHES:</strong> <span>90</span></li>
                                                 <li><strong>AGE:</strong> <span>28</span></li>
@@ -401,7 +402,7 @@
                                             </h4>
                                             <ul>
                                                 <li>
-                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span
+                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span>
                                                 </li>
                                                 <li><strong>MATCHES:</strong> <span>90</span></li>
                                                 <li><strong>AGE:</strong> <span>28</span></li>
@@ -427,7 +428,7 @@
                                             </h4>
                                             <ul>
                                                 <li>
-                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span
+                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span>
                                                 </li>
                                                 <li><strong>MATCHES:</strong> <span>90</span></li>
                                                 <li><strong>AGE:</strong> <span>28</span></li>
@@ -453,7 +454,7 @@
                                             </h4>
                                             <ul>
                                                 <li>
-                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span
+                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span>
                                                 </li>
                                                 <li><strong>MATCHES:</strong> <span>90</span></li>
                                                 <li><strong>AGE:</strong> <span>28</span></li>
@@ -479,7 +480,7 @@
                                             </h4>
                                             <ul>
                                                 <li>
-                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span
+                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span>
                                                 </li>
                                                 <li><strong>MATCHES:</strong> <span>90</span></li>
                                                 <li><strong>AGE:</strong> <span>28</span></li>
@@ -505,7 +506,7 @@
                                             </h4>
                                             <ul>
                                                 <li>
-                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span
+                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span>
                                                 </li>
                                                 <li><strong>MATCHES:</strong> <span>90</span></li>
                                                 <li><strong>AGE:</strong> <span>28</span></li>

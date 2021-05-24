@@ -80,7 +80,7 @@
                     <div class="titles no-margin">
                         <h4>{{$articulo->titulo}}</h4>
                     </div>
-                    <img src="{{$articulo->imagen->name}}" alt="titulo de la noticia">
+                    <img src="{{$articulo->imagen->url}}" alt="titulo de la noticia">
                     <div class="info-panel">
                         <p>{!! $articulo->contenido !!}</p>
                     </div>

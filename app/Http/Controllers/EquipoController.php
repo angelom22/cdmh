@@ -32,7 +32,11 @@ class EquipoController extends Controller
     public function EquipoSub20()
     {
 
-        return view('equipos.Sub20');
+        $jugadores = Jugadores::where('categoria_jugador', '=', 'sub20-21')->simplepaginate(11);
+        
+        $articulos = Articulo::where('categoria_id', '=', 3)->simplepaginate(3);
+
+        return view('equipos.Sub20', compact('jugadores','articulos'));
     }
 
     public function EquipoSub19()

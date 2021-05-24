@@ -14,6 +14,7 @@ use App\Model\Etiqueta;
 use App\Model\Imagen;
 use Carbon\Carbon;
 use App\User;
+use Illuminate\Support\Str;
 
 class ArticulosController extends Controller
 {
@@ -68,10 +69,10 @@ class ArticulosController extends Controller
      */
     public function store(ArticuloRequest $request)
     {
-        // dd($request->etiquetas);
-
+        
         // Manipulación de imagen
-        $file = request()->file('image')->store('public/articulos/'.$request->titulo);
+        // $file = request()->file('image')->store('public/articulos/'.$request->titulo);
+        // $imgUrl = Storage::url($file);
 
         // Se crea el contenido del articulo
         $articulo = new Articulo();
@@ -96,23 +97,20 @@ class ArticulosController extends Controller
         $articulo->etiquetas()->attach($etiquetas);
 
 
-        // $img = new Imagen();
-        // $img->name = Storage::url($file);
-        // $img->articulo()->associate($articulo);
-        // $img->save();
+        // Subir la imagen con Intervetion Imagen
+        $nombreImagen = Str::random(5) . $request->file('file');
+        $ruta = storage_path() . '/app/public/articulos/' . $nombreImagen;
+
+        // optimización de la imagen
+        $image = Image::make( $request->file('image') )->resize(960, null, function($constraint){
+            $constraint->aspectRatio();
+        })->save($ruta);
 
         // Se guarda la foto en la tabla imagenes
-        $img = Imagen::create([
-            'name' => Storage::url($file),
-            'articulo_id' => $articulo->id
+        $articulo->imagen()->create([
+            'url'   => '/storage/articulos/'. $nombreImagen ,
         ]);
         
-        // optimización de la imagen
-        $image = Image::make( Storage::get($file) )->resize(1080, 1080)->encode();
-        
-        // se reemplaza la imagen que subio el usuario por la imagen optimizada
-        Storage::put($img->name, (string) $image);
-
         Flash("Se ha creado el artículo " . $articulo->titulo .  " de forma correcta")->success();
 
         return redirect()->route('articulos.index');
@@ -186,7 +184,7 @@ class ArticulosController extends Controller
         try {
             if (request()->ajax()) {
 
-                $fotoRuta = str_replace('storage', 'public', $articulo->imagen->name);
+                $fotoRuta = str_replace('storage', 'public', $articulo->imagen->url);
 
                 Storage::delete($fotoRuta);
 

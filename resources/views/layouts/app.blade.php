@@ -30,10 +30,6 @@
 
     <link rel="stylesheet" type="text/css" href="{{asset('plugins/chosen/chosen.css')}}">
 
-    <link rel="stylesheet" type="text/css" href="{{asset('plugins/aloha/build/css/aloha.css')}}">
-
-    <link rel="stylesheet" type="text/css" href="{{asset('plugins/froala/css/froala_editor.css')}}">
-
     <link rel="stylesheet" href="{{asset('/plugins/trumbowyg/dist/ui/trumbowyg.min.css')}}">
 
     <link rel="stylesheet" type="text/css" href="{{asset('plugins/markitup/skins/markitup/style.css')}}" />
@@ -133,15 +129,7 @@
 
     <script type="text/javascript" src="{{asset('plugins/chosen/chosen.jquery.js')}}"></script>
 
-    <!-- <script type="text/javascript" src="{{asset('plugins/aloha/src/lib/aloha.js')}}"></script>
-
-    <script type="text/javascript" src="{{asset('plugins/froala/js/froala_editor.min.js')}}"></script>  -->
-
     <script src="{{asset('plugins/trumbowyg/dist/trumbowyg.min.js')}}"></script>
-
-    <!-- <script type="text/javascript" src="jquery.js"></script> -->
-    <!-- <script type="text/javascript" src="{{asset('plugins/markitup/jquery.markitup.js')}}"></script>
-    <script type="text/javascript" src="{{asset('plugins/markitup/sets/markdown/set.js')}}"></script> -->
 
     <!-- jconfirm -->
     <script src="{{asset('/js/jconfirm/JConfirm.min.js')}}"></script>

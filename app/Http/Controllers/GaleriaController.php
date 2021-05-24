@@ -2,10 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
+use App\Http\Requests\GaleriaRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use App\Model\Categoria;
+use App\Model\Galeria;
+use App\Model\Imagen;
+use Carbon\Carbon;
+
+
 
 class GaleriaController extends Controller
 {
+    // use GaleriaTrait;
+
+    public function __construct()
+    {
+        $this->middleware(['auth', 'admin'], ['except' => ['show', 'index']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +30,11 @@ class GaleriaController extends Controller
      */
     public function index()
     {
-        return view('galeria.index');
+        $galerias = Galeria::publicados()->simplePaginate(8);
+       
+        // dd($galerias);
+
+        return view('galeria.index', compact('galerias'));
     }
 
     /**
@@ -23,7 +44,10 @@ class GaleriaController extends Controller
      */
     public function create()
     {
-        //
+        // dd($galerium);
+        $categorias =  Categoria::orderBy('name', 'ASC')->get();
+
+        return view('galeria.create', compact('categorias'));
     }
 
     /**
@@ -34,7 +58,34 @@ class GaleriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $galeria = Galeria::create([
+            'nombre'        => $request->nombre,
+            'fecha'         => $request->fecha,
+            'video'         => $request->video,
+            'categoria_id'  => $request->categoria_id
+        ]);
+
+        // $imagen = request()->file('file')->store('public/galeria/' . $request->nombre);
+
+        // // Subir la imagen con Intervetion Imagen
+        // $nombreImagen = Str::random(5) . $request->file('file')->getClientOriginalName();
+        // $ruta = storage_path() . '/app/public/galeria/' . $nombreImagen;
+
+        // // optimización de la imagen
+        // $image = Image::make( request()->file('file') )->resize(1080, null, function($constraint){
+        //     $constraint->aspectRatio();
+        // })->encode()->save($ruta);
+
+        // $galeria->imagen()->create([
+        //     'url'   => Storage::url($imagen),
+        //     'imagen_id' => $galeria->id          
+        // ]);
+
+
+        Flash("Se ha creado la galería " . $galeria->nombre .  " de forma correcta")->success();
+
+        return redirect()->route('galeria.edit', $galeria);
     }
 
     /**
@@ -43,9 +94,9 @@ class GaleriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($galeria)
     {
-        //
+        return view('galeria.show');
     }
 
     /**
@@ -54,9 +105,13 @@ class GaleriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Galeria $galerium)
     {
-        //
+        // dd($galerium);
+
+        $categorias =  Categoria::orderBy('name', 'ASC')->get();
+
+        return view('galeria.edit', compact('galerium', 'categorias'));
     }
 
     /**
@@ -66,9 +121,23 @@ class GaleriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Galeria $galerium, Request $request)
     {
-        //
+
+        dd($galerium);
+
+        // se actualiza la galeria en la base da datos
+        $galerium->update(array_filter([
+            'nombre'        => $request->nombre,
+            'fecha'         => Carbon::parse($request->fecha)->format('d-m-Y H:i:s'),
+            'video'         => $request->video,
+            'categoria_id'  => $request->categoria_id,
+            'status'        => $request->status
+        ]));
+
+        Flash("Se han cargado las imagenes a la galería " . $galeria->nombre .  " de forma correcta")->success();
+
+        return redirect()->route('galeria.index');
     }
 
     /**
@@ -77,7 +146,7 @@ class GaleriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Galeria $galerium)
     {
         //
     }

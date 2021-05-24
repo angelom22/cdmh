@@ -2,16 +2,22 @@
 
 namespace App\Model;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Imagen extends Model
 {
-    protected $table = 'images';
+    protected $guarded = [];
 
-    protected $fillable = ['name', 'articulo_id'];
+    use HasFactory;
+    
+    // protected $table = 'imagens';
 
-    public function articulo()
+    // protected $fillable = ['url', 'imagen_id', 'imagen_modelo'];
+
+    public function imagen()
     {
-        return $this->belongsTo('App\Model\Articulo');
+        return $this->morphTo();
     }
+    
 }

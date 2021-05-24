@@ -87,7 +87,7 @@
                     <!-- Nav Tabs -->
                     <ul class="nav nav-tabs" id="myTab">
                         <li class="active"><a href="#overview" data-toggle="tab">General</a></li>
-                        <!-- <li><a href="#squad" data-toggle="tab">Squad</a></li> -->
+                        <li><a href="#plantilla" data-toggle="tab">Plantilla</a></li>
                         <!-- <li><a href="#fixtures" data-toggle="tab">FIXTURES</a></li> -->
                         <!-- <li><a href="#results" data-toggle="tab">RESULTS</a></li> -->
                         <!-- <li><a href="#stats" data-toggle="tab">Estadísticas</a></li> -->
@@ -117,65 +117,30 @@
                             </div>
 
                             <!--Items Club News -->
-                            <!-- <div class="row">
-                                          <div class="col-md-12">
-                                              <h3 class="clear-title">Noticial del Primer Equipo</h3>
-                                          </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3 class="clear-title">Noticias Juveniles</h3>
+                                </div>
 
+                            @foreach($articulos as $articulo )
+                                <div class="col-lg-6 col-xl-4">
 
-                                          <div class="col-lg-6 col-xl-4">
+                                    <div class="panel-box">
+                                        <div class="titles no-margin">
+                                            <h4><a href="{{route('articulos.show',$articulo->slug )}}">{{$articulo->titulo}}</a></h4>
+                                        </div>
+                                        <a href="{{route('articulos.show',$articulo->slug )}}"><img src="{{asset($articulo->imagen->name)}}" alt="$articulo->titulo"></a>
+                                        <div class="row">
+                                            <div class="info-panel">
+                                                <p>{{$articulo->extracto}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                                <div class="panel-box">
-                                                    <div class="titles no-margin">
-                                                        <h4><a href="#">World football's dates.</a></h4>
-                                                    </div>
-                                                    <a href="#"><img src="img/blog/1.jpg" alt=""></a>
-                                                    <div class="row">
-                                                       <div class="info-panel">
-                                                            <p>Fans from all around the world can apply for 2018 FIFA World Cup™ tickets as the first window of sales.</p>
-                                                       </div>
-                                                    </div>
-                                                </div>
-
-                                           </div>
-
-
-
-                                          <div class="col-lg-6 col-xl-4">
-
-                                                <div class="panel-box">
-                                                    <div class="titles no-margin">
-                                                        <h4><a href="#">Mbappe’s year to remember</a></h4>
-                                                    </div>
-                                                    <a href="#"><img src="img/blog/2.jpg" alt=""></a>
-                                                    <div class="row">
-                                                       <div class="info-panel">
-                                                            <p>Tickets may be purchased online by using Visa payment cards or Visa Checkout. Visa is the official.</p>
-                                                       </div>
-                                                    </div>
-                                                </div>
-
-                                           </div>
-
-
-
-                                          <div class="col-lg-6 col-xl-4">
-
-                                                <div class="panel-box">
-                                                    <div class="titles no-margin">
-                                                        <h4><a href="#">Egypt are one family</a></h4>
-                                                    </div>
-                                                    <a href="#"><img src="img/blog/3.jpg" alt=""></a>
-                                                    <div class="row">
-                                                       <div class="info-panel">
-                                                            <p>Successful applicants who have applied for supporter tickets and conditional supporter tickets will.</p>
-                                                       </div>
-                                                    </div>
-                                                </div>
-
-                                           </div>
-
-                                       </div> -->
+                                </div>
+                            @endforeach
+                            {{ $articulos->links() }}         
+                            </div> 
 
 
 
@@ -209,342 +174,341 @@
                             <!--End Sponsors CLub -->
 
                             <ul class="sponsors-carousel">
-                                <li><a href="#"><img src="{{asset('img/sponsors/AlcaldiaHatillo.png')}}" alt="alcaldia del hatillo"></a></li>
-                                <li><a href="#"><img src="{{asset('img/sponsors/LogoTipografiaOlympia.png')}}" alt="colaborador 1"></a></li>
-                                <li><a href="#"><img src="{{asset('img/sponsors/logoveneztec.png')}}" alt="colaborador 2"></a></li>
-                                <li><a href="#"><img src="{{asset('img/sponsors/sponsor01.png')}}" alt="colaborador 3"></a></li>
-                                <li><a href="#"><img src="{{asset('img/sponsors/sponsor03.png')}}" alt="colaborador 4"></a></li>
-                                <li><a href="#"><img src="{{asset('img/sponsors/sponsor02.png')}}" alt="colaborador 5"></a></li>
-                                <li><a href="#"><img src="{{asset('img/sponsors/sponsor04.png')}}" alt="colaborador 6"></a></li>
+                                <li><a href="#"><img src="{{asset('/img/sponsors/AlcaldiaHatillo.png')}}" alt="alcaldia del hatillo"></a></li>
+                                <li><a href="#"><img src="{{asset('/img/sponsors/LogoTipografiaOlympia.png')}}" alt="colaborador 1"></a></li>
+                                <li><a href="#"><img src="{{asset('/img/sponsors/logoveneztec.png')}}" alt="colaborador 2"></a></li>
+                                <li><a href="#"><img src="{{asset('/img/sponsors/sponsor01.png')}}" alt="colaborador 3"></a></li>
+                                <li><a href="#"><img src="{{asset('/img/sponsors/sponsor03.png')}}" alt="colaborador 4"></a></li>
+                                <li><a href="#"><img src="{{asset('/img/sponsors/sponsor02.png')}}" alt="colaborador 5"></a></li>
+                                <li><a href="#"><img src="{{asset('/img/sponsors/sponsor04.png')}}" alt="colaborador 6"></a></li>
+                                <li><a href="#"><img src="{{asset('/img/sponsors/sponsor05.png')}}" alt="colaborador 6"></a></li>
                             </ul>
 
                         </div>
                         <!-- Tab One - overview -->
 
                         <!-- Tab Two - squad -->
-                        <!-- <div class="tab-pane" id="squad">
-                                        <div class="row">
-
-                                             Item Player
-                                            <div class="col-xl-4 col-lg-6 col-md-6">
-                                                <div class="item-player">
-                                                    <div class="head-player">
-                                                        <img src="img/players/1.jpg" alt="location-team">
-                                                        <div class="overlay"><a href="single-player.html">+</a></div>
-                                                    </div>
-                                                    <div class="info-player">
-                                                        <span class="number-player">
-                                                            13
-                                                        </span>
-                                                        <h4>
-                                                            Cristiano Ronaldo
-                                                            <span>Forward</span>
-                                                        </h4>
-                                                        <ul>
-                                                            <li>
-                                                                <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span
-                                                            </li>
-                                                            <li><strong>MATCHES:</strong> <span>90</span></li>
-                                                            <li><strong>AGE:</strong> <span>28</span></li>
-                                                        </ul>
-                                                    </div>
-                                                    <a href="single-player.html" class="btn">View Player <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                             End Item Player
-
-
-                                            <div class="col-xl-4 col-lg-6 col-md-6">
-                                                <div class="item-player">
-                                                    <div class="head-player">
-                                                        <img src="img/players/2.jpg" alt="location-team">
-                                                        <div class="overlay"><a href="single-player.html">+</a></div>
-                                                    </div>
-                                                    <div class="info-player">
-                                                        <span class="number-player">
-                                                            10
-                                                        </span>
-                                                        <h4>
-                                                            Lionel Messi
-                                                            <span>Defender</span>
-                                                        </h4>
-                                                        <ul>
-                                                            <li>
-                                                                <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span
-                                                            </li>
-                                                            <li><strong>MATCHES:</strong> <span>90</span></li>
-                                                            <li><strong>AGE:</strong> <span>28</span></li>
-                                                        </ul>
-                                                    </div>
-                                                    <a href="single-player.html" class="btn">View Player <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-
-
-
-                                            <div class="col-xl-4 col-lg-6 col-md-6">
-                                                <div class="item-player">
-                                                    <div class="head-player">
-                                                        <img src="img/players/3.jpg" alt="location-team">
-                                                        <div class="overlay"><a href="single-player.html">+</a></div>
-                                                    </div>
-                                                    <div class="info-player">
-                                                        <span class="number-player">
-                                                            2
-                                                        </span>
-                                                        <h4>
-                                                            Neymar
-                                                            <span>Midfielder</span>
-                                                        </h4>
-                                                        <ul>
-                                                            <li>
-                                                                <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span
-                                                            </li>
-                                                            <li><strong>MATCHES:</strong> <span>90</span></li>
-                                                            <li><strong>AGE:</strong> <span>28</span></li>
-                                                        </ul>
-                                                    </div>
-                                                    <a href="single-player.html" class="btn">View Player <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xl-4 col-lg-6 col-md-6">
-                                                <div class="item-player">
-                                                    <div class="head-player">
-                                                        <img src="img/players/4.jpg" alt="location-team">
-                                                        <div class="overlay"><a href="single-player.html">+</a></div>
-                                                    </div>
-                                                    <div class="info-player">
-                                                        <span class="number-player">
-                                                            2
-                                                        </span>
-                                                        <h4>
-                                                            Luis Suárez
-                                                            <span>Goalkeeper</span>
-                                                        </h4>
-                                                        <ul>
-                                                            <li>
-                                                                <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span
-                                                            </li>
-                                                            <li><strong>MATCHES:</strong> <span>90</span></li>
-                                                            <li><strong>AGE:</strong> <span>28</span></li>
-                                                        </ul>
-                                                    </div>
-                                                    <a href="single-player.html" class="btn">View Player <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xl-4 col-lg-6 col-md-6">
-                                                <div class="item-player">
-                                                    <div class="head-player">
-                                                        <img src="img/players/5.jpg" alt="location-team">
-                                                        <div class="overlay"><a href="single-player.html">+</a></div>
-                                                    </div>
-                                                    <div class="info-player">
-                                                        <span class="number-player">
-                                                            2
-                                                        </span>
-                                                        <h4>
-                                                            Gareth Bale
-                                                            <span>Midfielder</span>
-                                                        </h4>
-                                                        <ul>
-                                                            <li>
-                                                                <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span
-                                                            </li>
-                                                            <li><strong>MATCHES:</strong> <span>90</span></li>
-                                                            <li><strong>AGE:</strong> <span>28</span></li>
-                                                        </ul>
-                                                    </div>
-                                                    <a href="single-player.html" class="btn">View Player <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xl-4 col-lg-6 col-md-6">
-                                                <div class="item-player">
-                                                    <div class="head-player">
-                                                        <img src="img/players/6.jpg" alt="location-team">
-                                                        <div class="overlay"><a href="single-player.html">+</a></div>
-                                                    </div>
-                                                    <div class="info-player">
-                                                        <span class="number-player">
-                                                            2
-                                                        </span>
-                                                        <h4>
-                                                            Sergio Agüero
-                                                            <span>Goalkeeper</span>
-                                                        </h4>
-                                                        <ul>
-                                                            <li>
-                                                                <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span
-                                                            </li>
-                                                            <li><strong>MATCHES:</strong> <span>90</span></li>
-                                                            <li><strong>AGE:</strong> <span>28</span></li>
-                                                        </ul>
-                                                    </div>
-                                                    <a href="single-player.html" class="btn">View Player <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xl-4 col-lg-6 col-md-6">
-                                                <div class="item-player">
-                                                    <div class="head-player">
-                                                        <img src="img/players/1.jpg" alt="location-team">
-                                                        <div class="overlay"><a href="single-player.html">+</a></div>
-                                                    </div>
-                                                    <div class="info-player">
-                                                        <span class="number-player">
-                                                            13
-                                                        </span>
-                                                        <h4>
-                                                            Cristiano Ronaldo
-                                                            <span>Forward</span>
-                                                        </h4>
-                                                        <ul>
-                                                            <li>
-                                                                <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span
-                                                            </li>
-                                                            <li><strong>MATCHES:</strong> <span>90</span></li>
-                                                            <li><strong>AGE:</strong> <span>28</span></li>
-                                                        </ul>
-                                                    </div>
-                                                    <a href="single-player.html" class="btn">View Player <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xl-4 col-lg-6 col-md-6">
-                                                <div class="item-player">
-                                                    <div class="head-player">
-                                                        <img src="img/players/2.jpg" alt="location-team">
-                                                        <div class="overlay"><a href="single-player.html">+</a></div>
-                                                    </div>
-                                                    <div class="info-player">
-                                                        <span class="number-player">
-                                                            10
-                                                        </span>
-                                                        <h4>
-                                                            Lionel Messi
-                                                            <span>Defender</span>
-                                                        </h4>
-                                                        <ul>
-                                                            <li>
-                                                                <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span
-                                                            </li>
-                                                            <li><strong>MATCHES:</strong> <span>90</span></li>
-                                                            <li><strong>AGE:</strong> <span>28</span></li>
-                                                        </ul>
-                                                    </div>
-                                                    <a href="single-player.html" class="btn">View Player <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xl-4 col-lg-6 col-md-6">
-                                                <div class="item-player">
-                                                    <div class="head-player">
-                                                        <img src="img/players/3.jpg" alt="location-team">
-                                                        <div class="overlay"><a href="single-player.html">+</a></div>
-                                                    </div>
-                                                    <div class="info-player">
-                                                        <span class="number-player">
-                                                            2
-                                                        </span>
-                                                        <h4>
-                                                            Neymar
-                                                            <span>Midfielder</span>
-                                                        </h4>
-                                                        <ul>
-                                                            <li>
-                                                                <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span
-                                                            </li>
-                                                            <li><strong>MATCHES:</strong> <span>90</span></li>
-                                                            <li><strong>AGE:</strong> <span>28</span></li>
-                                                        </ul>
-                                                    </div>
-                                                    <a href="single-player.html" class="btn">View Player <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xl-4 col-lg-6 col-md-6">
-                                                <div class="item-player">
-                                                    <div class="head-player">
-                                                        <img src="img/players/4.jpg" alt="location-team">
-                                                        <div class="overlay"><a href="single-player.html">+</a></div>
-                                                    </div>
-                                                    <div class="info-player">
-                                                        <span class="number-player">
-                                                            2
-                                                        </span>
-                                                        <h4>
-                                                            Luis Suárez
-                                                            <span>Goalkeeper</span>
-                                                        </h4>
-                                                        <ul>
-                                                            <li>
-                                                                <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span
-                                                            </li>
-                                                            <li><strong>MATCHES:</strong> <span>90</span></li>
-                                                            <li><strong>AGE:</strong> <span>28</span></li>
-                                                        </ul>
-                                                    </div>
-                                                    <a href="single-player.html" class="btn">View Player <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xl-4 col-lg-6 col-md-6">
-                                                <div class="item-player">
-                                                    <div class="head-player">
-                                                        <img src="img/players/5.jpg" alt="location-team">
-                                                        <div class="overlay"><a href="single-player.html">+</a></div>
-                                                    </div>
-                                                    <div class="info-player">
-                                                        <span class="number-player">
-                                                            2
-                                                        </span>
-                                                        <h4>
-                                                            Gareth Bale
-                                                            <span>Midfielder</span>
-                                                        </h4>
-                                                        <ul>
-                                                            <li>
-                                                                <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span
-                                                            </li>
-                                                            <li><strong>MATCHES:</strong> <span>90</span></li>
-                                                            <li><strong>AGE:</strong> <span>28</span></li>
-                                                        </ul>
-                                                    </div>
-                                                    <a href="single-player.html" class="btn">View Player <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xl-4 col-lg-6 col-md-6">
-                                                <div class="item-player">
-                                                    <div class="head-player">
-                                                        <img src="img/players/6.jpg" alt="location-team">
-                                                        <div class="overlay"><a href="single-player.html">+</a></div>
-                                                    </div>
-                                                    <div class="info-player">
-                                                        <span class="number-player">
-                                                            2
-                                                        </span>
-                                                        <h4>
-                                                            Sergio Agüero
-                                                            <span>Goalkeeper</span>
-                                                        </h4>
-                                                        <ul>
-                                                            <li>
-                                                                <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span
-                                                            </li>
-                                                            <li><strong>MATCHES:</strong> <span>90</span></li>
-                                                            <li><strong>AGE:</strong> <span>28</span></li>
-                                                        </ul>
-                                                    </div>
-                                                    <a href="single-player.html" class="btn">View Player <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-
-
+                        <div class="tab-pane" id="plantilla">
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-6 col-md-6">
+                                    <div class="item-player">
+                                        <div class="head-player">
+                                            <img src="img/players/1.jpg" alt="location-team">
+                                            <div class="overlay"><a href="single-player.html">+</a></div>
                                         </div>
-                                    </div> -->
+                                        <div class="info-player">
+                                            <span class="number-player">
+                                                13
+                                            </span>
+                                            <h4>
+                                                Cristiano Ronaldo
+                                                <span>Forward</span>
+                                            </h4>
+                                            <ul>
+                                                <li>
+                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span>
+                                                </li>
+                                                <li><strong>MATCHES:</strong> <span>90</span></li>
+                                                <li><strong>AGE:</strong> <span>28</span></li>
+                                            </ul>
+                                        </div>
+                                        <a href="single-player.html" class="btn">View Player <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            
+
+
+                                <div class="col-xl-4 col-lg-6 col-md-6">
+                                    <div class="item-player">
+                                        <div class="head-player">
+                                            <img src="img/players/2.jpg" alt="location-team">
+                                            <div class="overlay"><a href="single-player.html">+</a></div>
+                                        </div>
+                                        <div class="info-player">
+                                            <span class="number-player">
+                                                10
+                                            </span>
+                                            <h4>
+                                                Lionel Messi
+                                                <span>Defender</span>
+                                            </h4>
+                                            <ul>
+                                                <li>
+                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span>
+                                                </li>
+                                                <li><strong>MATCHES:</strong> <span>90</span></li>
+                                                <li><strong>AGE:</strong> <span>28</span></li>
+                                            </ul>
+                                        </div>
+                                        <a href="single-player.html" class="btn">View Player <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-xl-4 col-lg-6 col-md-6">
+                                    <div class="item-player">
+                                        <div class="head-player">
+                                            <img src="img/players/3.jpg" alt="location-team">
+                                            <div class="overlay"><a href="single-player.html">+</a></div>
+                                        </div>
+                                        <div class="info-player">
+                                            <span class="number-player">
+                                                2
+                                            </span>
+                                            <h4>
+                                                Neymar
+                                                <span>Midfielder</span>
+                                            </h4>
+                                            <ul>
+                                                <li>
+                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span>
+                                                </li>
+                                                <li><strong>MATCHES:</strong> <span>90</span></li>
+                                                <li><strong>AGE:</strong> <span>28</span></li>
+                                            </ul>
+                                        </div>
+                                        <a href="single-player.html" class="btn">View Player <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-4 col-lg-6 col-md-6">
+                                    <div class="item-player">
+                                        <div class="head-player">
+                                            <img src="img/players/4.jpg" alt="location-team">
+                                            <div class="overlay"><a href="single-player.html">+</a></div>
+                                        </div>
+                                        <div class="info-player">
+                                            <span class="number-player">
+                                                2
+                                            </span>
+                                            <h4>
+                                                Luis Suárez
+                                                <span>Goalkeeper</span>
+                                            </h4>
+                                            <ul>
+                                                <li>
+                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span>
+                                                </li>
+                                                <li><strong>MATCHES:</strong> <span>90</span></li>
+                                                <li><strong>AGE:</strong> <span>28</span></li>
+                                            </ul>
+                                        </div>
+                                        <a href="single-player.html" class="btn">View Player <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-4 col-lg-6 col-md-6">
+                                    <div class="item-player">
+                                        <div class="head-player">
+                                            <img src="img/players/5.jpg" alt="location-team">
+                                            <div class="overlay"><a href="single-player.html">+</a></div>
+                                        </div>
+                                        <div class="info-player">
+                                            <span class="number-player">
+                                                2
+                                            </span>
+                                            <h4>
+                                                Gareth Bale
+                                                <span>Midfielder</span>
+                                            </h4>
+                                            <ul>
+                                                <li>
+                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span>
+                                                </li>
+                                                <li><strong>MATCHES:</strong> <span>90</span></li>
+                                                <li><strong>AGE:</strong> <span>28</span></li>
+                                            </ul>
+                                        </div>
+                                        <a href="single-player.html" class="btn">View Player <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-4 col-lg-6 col-md-6">
+                                    <div class="item-player">
+                                        <div class="head-player">
+                                            <img src="img/players/6.jpg" alt="location-team">
+                                            <div class="overlay"><a href="single-player.html">+</a></div>
+                                        </div>
+                                        <div class="info-player">
+                                            <span class="number-player">
+                                                2
+                                            </span>
+                                            <h4>
+                                                Sergio Agüero
+                                                <span>Goalkeeper</span>
+                                            </h4>
+                                            <ul>
+                                                <li>
+                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span>
+                                                </li>
+                                                <li><strong>MATCHES:</strong> <span>90</span></li>
+                                                <li><strong>AGE:</strong> <span>28</span></li>
+                                            </ul>
+                                        </div>
+                                        <a href="single-player.html" class="btn">View Player <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-4 col-lg-6 col-md-6">
+                                    <div class="item-player">
+                                        <div class="head-player">
+                                            <img src="img/players/1.jpg" alt="location-team">
+                                            <div class="overlay"><a href="single-player.html">+</a></div>
+                                        </div>
+                                        <div class="info-player">
+                                            <span class="number-player">
+                                                13
+                                            </span>
+                                            <h4>
+                                                Cristiano Ronaldo
+                                                <span>Forward</span>
+                                            </h4>
+                                            <ul>
+                                                <li>
+                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span>
+                                                </li>
+                                                <li><strong>MATCHES:</strong> <span>90</span></li>
+                                                <li><strong>AGE:</strong> <span>28</span></li>
+                                            </ul>
+                                        </div>
+                                        <a href="single-player.html" class="btn">View Player <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-4 col-lg-6 col-md-6">
+                                    <div class="item-player">
+                                        <div class="head-player">
+                                            <img src="img/players/2.jpg" alt="location-team">
+                                            <div class="overlay"><a href="single-player.html">+</a></div>
+                                        </div>
+                                        <div class="info-player">
+                                            <span class="number-player">
+                                                10
+                                            </span>
+                                            <h4>
+                                                Lionel Messi
+                                                <span>Defender</span>
+                                            </h4>
+                                            <ul>
+                                                <li>
+                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span>
+                                                </li>
+                                                <li><strong>MATCHES:</strong> <span>90</span></li>
+                                                <li><strong>AGE:</strong> <span>28</span></li>
+                                            </ul>
+                                        </div>
+                                        <a href="single-player.html" class="btn">View Player <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-4 col-lg-6 col-md-6">
+                                    <div class="item-player">
+                                        <div class="head-player">
+                                            <img src="img/players/3.jpg" alt="location-team">
+                                            <div class="overlay"><a href="single-player.html">+</a></div>
+                                        </div>
+                                        <div class="info-player">
+                                            <span class="number-player">
+                                                2
+                                            </span>
+                                            <h4>
+                                                Neymar
+                                                <span>Midfielder</span>
+                                            </h4>
+                                            <ul>
+                                                <li>
+                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span>
+                                                </li>
+                                                <li><strong>MATCHES:</strong> <span>90</span></li>
+                                                <li><strong>AGE:</strong> <span>28</span></li>
+                                            </ul>
+                                        </div>
+                                        <a href="single-player.html" class="btn">View Player <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-4 col-lg-6 col-md-6">
+                                    <div class="item-player">
+                                        <div class="head-player">
+                                            <img src="img/players/4.jpg" alt="location-team">
+                                            <div class="overlay"><a href="single-player.html">+</a></div>
+                                        </div>
+                                        <div class="info-player">
+                                            <span class="number-player">
+                                                2
+                                            </span>
+                                            <h4>
+                                                Luis Suárez
+                                                <span>Goalkeeper</span>
+                                            </h4>
+                                            <ul>
+                                                <li>
+                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span>
+                                                </li>
+                                                <li><strong>MATCHES:</strong> <span>90</span></li>
+                                                <li><strong>AGE:</strong> <span>28</span></li>
+                                            </ul>
+                                        </div>
+                                        <a href="single-player.html" class="btn">View Player <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-4 col-lg-6 col-md-6">
+                                    <div class="item-player">
+                                        <div class="head-player">
+                                            <img src="img/players/5.jpg" alt="location-team">
+                                            <div class="overlay"><a href="single-player.html">+</a></div>
+                                        </div>
+                                        <div class="info-player">
+                                            <span class="number-player">
+                                                2
+                                            </span>
+                                            <h4>
+                                                Gareth Bale
+                                                <span>Midfielder</span>
+                                            </h4>
+                                            <ul>
+                                                <li>
+                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span>
+                                                </li>
+                                                <li><strong>MATCHES:</strong> <span>90</span></li>
+                                                <li><strong>AGE:</strong> <span>28</span></li>
+                                            </ul>
+                                        </div>
+                                        <a href="single-player.html" class="btn">View Player <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-4 col-lg-6 col-md-6">
+                                    <div class="item-player">
+                                        <div class="head-player">
+                                            <img src="img/players/6.jpg" alt="location-team">
+                                            <div class="overlay"><a href="single-player.html">+</a></div>
+                                        </div>
+                                        <div class="info-player">
+                                            <span class="number-player">
+                                                2
+                                            </span>
+                                            <h4>
+                                                Sergio Agüero
+                                                <span>Goalkeeper</span>
+                                            </h4>
+                                            <ul>
+                                                <li>
+                                                    <strong>NATIONALITY</strong> <span><img src="img/clubs-logos/colombia.png" alt=""> Colombia </span>
+                                                </li>
+                                                <li><strong>MATCHES:</strong> <span>90</span></li>
+                                                <li><strong>AGE:</strong> <span>28</span></li>
+                                            </ul>
+                                        </div>
+                                        <a href="single-player.html" class="btn">View Player <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
                         <!-- End Tab Two - squad -->
 
                         <!-- Tab Theree - fixtures -->

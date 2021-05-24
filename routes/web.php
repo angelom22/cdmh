@@ -81,7 +81,6 @@ Ruta de Equipo Sub19
 */
 Route::get('sub16', 'EquipoController@EquipoSub16')->name('sub16');
 
-
 /*
 Ruta de Futbol Base
 */
@@ -90,8 +89,12 @@ Route::resource('futbase', 'futBaseController');
 /*
 Ruta de Galeria
 */
-Route::resource('galeria', 'galeriaController');
+Route::resource('galeria', 'GaleriaController')->names([
+    'update'     => 'galeriaUpdate',
+]);
+// Route::get('/galeria/{galerium}', 'GaleriaController@GaleriaUpdate')->name('galeria.update');
 
+Route::post('galeria/{galerium}/imagen', 'FotosController@store')->name('galeria.foto.store');
 
 /*
 Ruta de Contacto

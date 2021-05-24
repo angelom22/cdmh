@@ -53,9 +53,10 @@ class Articulo extends Model
         return $this->belongsTo('App\User');
     }
 
+    // Relación uno a uno polimorfica
     public function imagen()
     {
-        return $this->hasOne('App\Model\Imagen');
+        return $this->morphOne('App\Model\Imagen', 'imagen');
     }
 
     public function etiquetas()

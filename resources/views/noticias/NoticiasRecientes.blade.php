@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-md-4">
             <div class="img-hover">
-                <img src="{{$articulo->imagen->name}}" alt="titulo de la imagen" class="img__noticiaReciente img-responsive">
+                <img src="{{$articulo->imagen->url}}" alt="titulo de la imagen" class="img__noticiaReciente img-responsive">
                 <div class="overlay"><a href="{{route('articulos.show',$articulo->slug )}}">+</a></div>
             </div>
         </div>

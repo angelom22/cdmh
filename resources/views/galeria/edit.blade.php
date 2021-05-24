@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/dropzone/min/dropzone.min.css">
      <!-- BS Stepper -->
     <link rel="stylesheet" href="/plugins/bs-stepper/css/bs-stepper.min.css">
-    
+
 @endsection
 
 
@@ -31,7 +31,7 @@
 
         <div class="info-panel">
 
-            <form action="{{route('galeriaUpdate', $galerium)}}" class="form-horizontal padding-top-mini"  method="patch" enctype="multipart/form-data" files="true">
+            <form action="{{route('galeriaUpdate', $galerium)}}"  method="post" enctype="multipart/form-data" files="true">
 
                 @method('patch')
                 @csrf
@@ -53,7 +53,7 @@
                                     <span class="bs-stepper-label">Contenido de la Galería</span>
                                 </button>
                                 </div>
-                                
+
                             </div>
                             <div class="bs-stepper-content">
                                 <!-- your steps content here -->
@@ -68,14 +68,19 @@
 
                                     <input type="hidden" value="PUBLICADO" name="status">
 
+                                    <input type="hidden" value="{{$galerium->fecha}}" name="fecha">
+
+                                    <input type="hidden" value="{{$galerium->categoria_id }}" name="categoria_id">
+
+
                                     <!-- <div class="form-group {{$errors->has('categoria') ? 'has-error' : ''}}">
                                         <label class="control-label col-sm-2"><strong>Status Galería</strong> *</label>
                                         <div class="col-sm-10">
                                             <select hidden class="select2" name="categoria_id" id="categoria_id" tabindex="5">
                                                 <option value="{{$galerium->status}}">{{$galerium->status}}</option>
-                                                
+
                                                 <option value="BORRADOR">BORRADOR</option>
-                                                
+
                                                 <option value="PUBLICADO">PUBLICADO</option>
                                             </select>
                                             {!! $errors->first('categoria', '<span class="alert-danger">:message</span>') !!}
@@ -103,7 +108,7 @@
 
                                 </div>
 
-                                
+
                             </div>
                             </div>
                         </div>
@@ -147,10 +152,10 @@
 
 
 <script>
-    
+
 
 $(function () {
-   
+
 
     //Initialize Select2 Elements
     $('.select2').select2({
@@ -160,7 +165,7 @@ $(function () {
 
 });
 
-    
+
     // BS-Stepper Init
     document.addEventListener('DOMContentLoaded', function () {
         window.stepper = new Stepper(document.querySelector('.bs-stepper'))
@@ -171,8 +176,8 @@ $(function () {
         url:'/galeria/{{ $galerium->id }}/imagen',
         paramName: 'file',
         acceptedFiles: 'image/*',
-        maxFilesize: 2, 
-        maxFiles: 10,    
+        maxFilesize: 2,
+        maxFiles: 10,
         headers:{
             'X-CSRF-TOKEN': '{{ csrf_token() }}',
         },
@@ -184,7 +189,7 @@ $(function () {
         var msg = res.file[0];
         $('.dz-error-message:last > span').text(msg)
     });
-    
+
     Dropzone.autoDiscover = false;
 
 

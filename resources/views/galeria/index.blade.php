@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+@section('css')
+    <!-- jconfirm -->
+    <link rel="stylesheet" href="/css/jconfirm/JConfirm.min.css">
+@endsection
+
+
 @section('content')
 
 <!-- menu content -->
@@ -7,7 +13,7 @@
 <!-- menu content -->
 
 <!-- Section Title -->
-<div class="section-title big-title parallax-section" style="background:url({{asset('img/parallax2.jpg')}}); 
+<div class="section-title big-title parallax-section" style="background:url({{asset('img/parallax2.jpg')}});
 object-fit: cover;
 background-size: cover !important;
 background-attachment: fixed !important;
@@ -98,13 +104,15 @@ background-repeat: no-repeat !important;">
                                         <p>{{$galeria->fecha->format('d-m-Y')}}</p>
                                     </div>
                                 @if(Auth::check())
-                        
+
                                 @if(Auth::user()->Admin() == 'admin')
+
                                 <a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-wrench">Editar</span>
                                 </a>
-                                
-                                <a data-route="#" class="btn btn-danger delete-record" href="#" >Eliminar</a>
-                                
+
+
+                                <a data-route="{{route('galeria.destroy', ['galerium' => $galeria->id]) }}" class="btn btn-danger delete-record" href="#" >Eliminar</a>
+
                                 @endif
                                 @endif
                                 </div>
@@ -125,7 +133,9 @@ background-repeat: no-repeat !important;">
 @endsection
 
 @section('js')
+<!-- jconfirm -->
+<script src="{{asset('/plugins/jconfirm/JConfirm.min.js')}}"></script>
 
-<script type="text/javascript" src="{{asset('js/galeria.js')}}"></script>
+<script src="{{asset('/js/functions.js')}}"></script>
 
 @endsection

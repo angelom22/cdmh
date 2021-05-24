@@ -31,7 +31,7 @@ class GaleriaController extends Controller
     public function index()
     {
         $galerias = Galeria::publicados()->simplePaginate(8);
-       
+
         // dd($galerias);
 
         return view('galeria.index', compact('galerias'));
@@ -79,7 +79,7 @@ class GaleriaController extends Controller
 
         // $galeria->imagen()->create([
         //     'url'   => Storage::url($imagen),
-        //     'imagen_id' => $galeria->id          
+        //     'imagen_id' => $galeria->id
         // ]);
 
 
@@ -124,18 +124,18 @@ class GaleriaController extends Controller
     public function update(Galeria $galerium, Request $request)
     {
 
-        dd($galerium);
+        // dd($galerium);
 
         // se actualiza la galeria en la base da datos
         $galerium->update(array_filter([
             'nombre'        => $request->nombre,
-            'fecha'         => Carbon::parse($request->fecha)->format('d-m-Y H:i:s'),
+            'fecha'         => $request->fecha,
             'video'         => $request->video,
             'categoria_id'  => $request->categoria_id,
             'status'        => $request->status
         ]));
 
-        Flash("Se han cargado las imagenes a la galería " . $galeria->nombre .  " de forma correcta")->success();
+        Flash("Se han cargado las imagenes a la galería " . $galerium->nombre .  " de forma correcta")->success();
 
         return redirect()->route('galeria.index');
     }
@@ -148,6 +148,23 @@ class GaleriaController extends Controller
      */
     public function destroy(Galeria $galerium)
     {
-        //
+        try {
+            if (request()->ajax()) {
+
+                $fotoRuta = str_replace('storage', 'public', $galerium->imagen->url);
+
+                Storage::delete($fotoRuta);
+
+                $galerium->delete();
+
+                Flash("Se ha eliminado el artículo " . $galerium->titulo .  " de forma correcta")->success();
+
+                return redirect()->route('galeria.index');
+            } else {
+                abort(401);
+            }
+        } catch (\Exception $exception) {
+            session()->flash("message", ["danger", $exception->getMessage()]);
+        }
     }
 }

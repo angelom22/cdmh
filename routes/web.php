@@ -92,7 +92,7 @@ Ruta de Galeria
 Route::resource('galeria', 'GaleriaController')->names([
     'update'     => 'galeriaUpdate',
 ]);
-// Route::get('/galeria/{galerium}', 'GaleriaController@GaleriaUpdate')->name('galeria.update');
+Route::get('/galeria/{galerium}', 'GaleriaController@GaleriaUpdate')->name('GaleriaEdit');
 
 Route::post('galeria/{galerium}/imagen', 'FotosController@store')->name('galeria.foto.store');
 

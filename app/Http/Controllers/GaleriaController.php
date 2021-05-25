@@ -122,18 +122,10 @@ class GaleriaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Galeria $galerium, Request $request)
-    {
-
-        // dd($galerium);
-
+    {   
+        
         // se actualiza la galeria en la base da datos
-        $galerium->update(array_filter([
-            'nombre'        => $request->nombre,
-            'fecha'         => $request->fecha,
-            'video'         => $request->video,
-            'categoria_id'  => $request->categoria_id,
-            'status'        => $request->status
-        ]));
+        $galerium->update($request->all());
 
         Flash("Se han cargado las imagenes a la galería " . $galerium->nombre .  " de forma correcta")->success();
 
@@ -148,16 +140,21 @@ class GaleriaController extends Controller
      */
     public function destroy(Galeria $galerium)
     {
+        // return request()->ajax();
+
         try {
             if (request()->ajax()) {
-
-                $fotoRuta = str_replace('storage', 'public', $galerium->imagen->url);
-
-                Storage::delete($fotoRuta);
-
+                
+                foreach($galerium->imagen as $imagen){
+                    $imagenRuta = str_replace('storage', 'public', $imagen->url);
+                    Storage::delete($imagenRuta);
+                }
+            
+                $galerium->imagen()->delete();
+                
                 $galerium->delete();
 
-                Flash("Se ha eliminado el artículo " . $galerium->titulo .  " de forma correcta")->success();
+                Flash("Se ha eliminado la galería " . $galerium->nombre .  " de forma correcta")->success();
 
                 return redirect()->route('galeria.index');
             } else {

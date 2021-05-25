@@ -36,7 +36,7 @@ class Galeria extends Model
         'fecha' => 'datetime:d-m-Y',
     ];
 
-    protected $fillable = ['nombre', 'slug', 'fecha', 'imagen', 'video', 'categoria_id'];
+    protected $fillable = ['nombre', 'slug', 'fecha', 'imagen', 'video', 'categoria_id', 'status'];
 
     public function categoria()
     {

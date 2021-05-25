@@ -110,10 +110,10 @@
                                             </div>
 
                                             <div class="col-md-3">
-                                                <h5><i class="fa fa-futbol-o" aria-hidden="true"></i>JUGADORES</h5>
+                                                <h5><i class="fa fa-futbol-o" aria-hidden="true"></i>ATLETAS</h5>
                                                 <div class="img-hover">
                                                     <img src="{{asset('img/blog/NuevaIndumentaria.jpg')}}" alt="imagen jugadores" class="img-responsive">
-                                                    <div class="overlay"><a href="#">+</a></div>
+                                                    <div class="overlay"><a href="{{url ('atleta')}}">+</a></div>
                                                 </div>
                                             </div>
 

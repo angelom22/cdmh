@@ -31,7 +31,7 @@
 
         <div class="info-panel">
 
-            <form action="{{route('galeriaUpdate', $galerium)}}"  method="post" enctype="multipart/form-data" files="true">
+            <form action="{{route('galeriaUpdate', $galerium)}}" class="form-horizontal padding-top-mini" method="post" enctype="multipart/form-data" files="true">
 
                 @method('patch')
                 @csrf
@@ -66,7 +66,7 @@
                                         </div>
                                     </div>
 
-                                    <input type="hidden" value="PUBLICADO" name="status">
+                                    <input type="hidden" name="status" value="PUBLICADO">
 
                                     <input type="hidden" value="{{$galerium->fecha}}" name="fecha">
 
@@ -76,7 +76,7 @@
                                     <!-- <div class="form-group {{$errors->has('categoria') ? 'has-error' : ''}}">
                                         <label class="control-label col-sm-2"><strong>Status Galería</strong> *</label>
                                         <div class="col-sm-10">
-                                            <select hidden class="select2" name="categoria_id" id="categoria_id" tabindex="5">
+                                            <select hidden class="select2" name="status" id="status" tabindex="5">
                                                 <option value="{{$galerium->status}}">{{$galerium->status}}</option>
 
                                                 <option value="BORRADOR">BORRADOR</option>

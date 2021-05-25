@@ -92,9 +92,10 @@ Ruta de Galeria
 Route::resource('galeria', 'GaleriaController')->names([
     'update'     => 'galeriaUpdate',
 ]);
+Route::delete('/galeria/{galerium}', 'GaleriaController@destroy')->name('galeria.destroy');
+Route::post('galeria/{galerium}/imagen', 'FotosController@store')->name('galeria.foto.store');
 Route::get('/galeria/{galerium}', 'GaleriaController@GaleriaUpdate')->name('GaleriaEdit');
 
-Route::post('galeria/{galerium}/imagen', 'FotosController@store')->name('galeria.foto.store');
 
 /*
 Ruta de Contacto
@@ -174,10 +175,10 @@ Route::get('sponsors', function () {
 });
 
 // Ruta registro jugador
-Route::resource('jugador', 'JugadoresController')->names([
+Route::resource('atleta', 'JugadoresController')->names([
     'update'   => 'JugadorUpdate',
     'create'     => 'JugadorCreate',
     'store'       => 'JugadorStore',
     'edit'         => 'JugadorEdit',
 ]);
-Route::delete('/jugador/{jugador}/destroy', 'JugadoresController@destroy')->name('jugador.destroy');
+Route::delete('/atleta/{jugador}/destroy', 'JugadoresController@destroy')->name('jugador.destroy');

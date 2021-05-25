@@ -111,7 +111,7 @@ background-repeat: no-repeat !important;">
                                 </a>
 
 
-                                <a data-route="{{route('galeria.destroy', ['galerium' => $galeria->id]) }}" class="btn btn-danger delete-record" href="#" >Eliminar</a>
+                                <a data-route="{{route('galeria.destroy', [ 'galerium' => $galeria ]) }}" class="btn btn-danger delete-record" href="#" >Eliminar</a>
 
                                 @endif
                                 @endif

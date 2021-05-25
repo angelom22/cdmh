@@ -31,7 +31,7 @@
 
         <div class="info-panel">
 
-            <form action="/jugador" class="form-horizontal padding-top-mini"  method="POST" enctype="multipart/form-data" files="true">
+            <form action="{{route('JugadorStore')}}" class="form-horizontal padding-top-mini"  method="POST" enctype="multipart/form-data" files="true">
                 @method('post')
                 @csrf
 

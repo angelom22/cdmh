@@ -25,7 +25,9 @@ class JugadoresController extends Controller
      */
     public function index()
     {
-        return 'Hola jugador';
+        $jugadores = Jugadores::simplePaginate(11);
+
+        return view('admin.jugadores.index', compact('jugadores'));
     }
 
     /**
@@ -47,9 +49,6 @@ class JugadoresController extends Controller
      */
     public function store(JugadorRequest $request)
     {
-        // dd( $request->file('file') );
-
-        $file = request()->file('file')->store('public/players/'.$request->nombre);
 
         $jugador = Jugadores::create([
             'nombre' => $request->nombre,
@@ -64,18 +63,35 @@ class JugadoresController extends Controller
             'partidos' => $request->partidos,
             'goles' => $request->goles,
             'categoria_jugador' => $request->categoria_jugador,
-            'foto' => Storage::url($file)
+            // 'foto' => Storage::url($file)
         ]);
             
         // optimización de la imagen
-        $image = Image::make( Storage::get($file) )->resize(770, 512)->encode();
+        // $image = Image::make( Storage::get($file) )->resize(770, 512)->encode();
 
         // se reemplaza la imagen que subio el usuario por la imagen optimizada
-        Storage::put($jugador->foto, (string) $image);
+        // Storage::put($jugador->foto, (string) $image);
+
+        $foto =  request()->file('file')->store('public/atletas/'. $request->nombre);
+        
+        // Subir la imagen con Intervetion Imagen
+        $ruta = storage_path() . '/app/' . $foto;
+
+        // optimización de la imagen
+        $image = Image::make( request()->file('file') )
+                        ->resize(770, 512)
+                        ->encode()
+                        ->save($ruta);
+
+        // Se guarda la foto en la tabla imagenes
+        $jugador->imagen()->create([
+            'url'   => Storage::url($foto),
+            'imagen_id' => $jugador->id     
+        ]);
       
         Flash("El jugador " . $jugador->nombre .  " se a registrado de forma corecta")->success();
 
-        return redirect()->route('jugador.index');
+        return redirect()->route('atleta.index');
 
     }
 
@@ -131,7 +147,7 @@ class JugadoresController extends Controller
         try {
             if (request()->ajax()) {
                
-                $fotoRuta = str_replace('storage', 'public', $jugador->foto);
+                $fotoRuta = str_replace('storage', 'public', $jugador->imagen->url);
             
                 Storage::delete($fotoRuta);
                 

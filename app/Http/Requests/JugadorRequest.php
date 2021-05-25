@@ -36,7 +36,7 @@ class JugadorRequest extends FormRequest
             'partidos'          => 'numeric',
             'goles'             => 'numeric',
             'categoria_jugador' => 'required',
-            'file'              => 'image|required',
+            'file'              => 'required|image|max:2048',
         ];
     }
 }

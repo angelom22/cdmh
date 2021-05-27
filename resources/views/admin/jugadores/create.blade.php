@@ -277,8 +277,18 @@ $(function () {
     
     // BS-Stepper Init
     document.addEventListener('DOMContentLoaded', function () {
-        window.stepper = new Stepper(document.querySelector('.bs-stepper'))
-    })
+        window.stepper = new Stepper(document.querySelector('.bs-stepper'),{
+            linear: true,
+            animation: true,
+            selectors: {
+                steps: '.step',
+                trigger: '.step-trigger',
+                stepper: '.bs-stepper'
+  
+        }
+        });
+
+    });
 
     // Dropzone
     new Dropzone('.dropzone', {

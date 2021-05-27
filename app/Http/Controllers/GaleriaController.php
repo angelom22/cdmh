@@ -11,12 +11,11 @@ use App\Model\Categoria;
 use App\Model\Galeria;
 use App\Model\Imagen;
 use Carbon\Carbon;
-
-
+use App\Traits\GaleriaTrait;
 
 class GaleriaController extends Controller
 {
-    // use GaleriaTrait;
+    use GaleriaTrait;
 
     public function __construct()
     {
@@ -61,7 +60,7 @@ class GaleriaController extends Controller
 
         $galeria = Galeria::create([
             'nombre'        => $request->nombre,
-            'fecha'         => $request->fecha,
+            'fecha'         => Carbon::parse($request->fecha),
             'video'         => $request->video,
             'categoria_id'  => $request->categoria_id
         ]);
@@ -123,9 +122,14 @@ class GaleriaController extends Controller
      */
     public function update(Galeria $galerium, Request $request)
     {   
-        
+        // dd($request->fecha);
         // se actualiza la galeria en la base da datos
-        $galerium->update($request->all());
+        $galerium->update(array_filter([
+            'nombre'        => $request->nombre,
+            'fecha'         => Carbon::parse($request->fecha),
+            'video'         => $request->video,
+            'categoria_id'  => $request->categoria_id
+        ]));
 
         Flash("Se han cargado las imagenes a la galería " . $galerium->nombre .  " de forma correcta")->success();
 
@@ -151,7 +155,7 @@ class GaleriaController extends Controller
                 }
             
                 $galerium->imagen()->delete();
-                
+
                 $galerium->delete();
 
                 Flash("Se ha eliminado la galería " . $galerium->nombre .  " de forma correcta")->success();

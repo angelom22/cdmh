@@ -19,7 +19,7 @@ class FotosController extends Controller
 
         // Validación de la imagen
         $this->validate(request(), [
-            'image' => 'image|max:2048'
+            'file' => 'required|image|max:2048'
         ]);
         
         $imagen =  request()->file('file')->store('public/galeria/'. $galerium->nombre);
@@ -64,14 +64,13 @@ class FotosController extends Controller
         // return Storage::url($fotoUrl);
     }
 
-    public function destroy(Foto $foto) 
+    public function destroy(Imagen $foto) 
     {
         $foto->delete();
 
         $fotoRuta = str_replace('storage', 'public', $foto->url);
         
         Storage::delete($fotoRuta);
-
 
         return back()->with('flash', 'Foto eliminada');
     }

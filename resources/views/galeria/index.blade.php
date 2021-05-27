@@ -107,9 +107,8 @@ background-repeat: no-repeat !important;">
 
                                 @if(Auth::user()->Admin() == 'admin')
 
-                                <a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-wrench">Editar</span>
+                                <a href="{{route('GaleriaEditar',  [ 'galerium' => $galeria ]) }}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench">Editar</span>
                                 </a>
-
 
                                 <a data-route="{{route('galeria.destroy', [ 'galerium' => $galeria ]) }}" class="btn btn-danger delete-record" href="#" >Eliminar</a>
 

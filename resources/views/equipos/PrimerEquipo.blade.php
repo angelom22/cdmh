@@ -188,8 +188,8 @@
                         <!-- Tab Two - equipo -->
                         <div class="tab-pane" id="equipo">
                             <div class="row">
+                                @foreach($jugadores as $jugador)
                                 <div class="col-xl-4 col-lg-6 col-md-6">
-                                    @foreach($jugadores as $jugador)
                                     <div class="item-player">
                                         <div class="head-player">
                                             <img src="{{$jugador->imagen->url}}" alt="{{$jugador->nombre}}">
@@ -225,9 +225,9 @@
                                             @endif
                                         @endif
                                     </div>
-                                    @endforeach
-                                    {{ $jugadores->links() }}
                                 </div>
+                                @endforeach
+                                {{ $jugadores->links() }}
 
 
                             </div>

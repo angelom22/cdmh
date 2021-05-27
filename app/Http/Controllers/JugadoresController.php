@@ -129,9 +129,26 @@ class JugadoresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Jugadores $jugador)
     {
-        //
+        $jugador->update(array_filter([
+            'nombre' => $request->nombre, 
+            'edad' => $request->edad, 
+            'fecha_nacimiento' => $request->fecha_nacimiento, 
+            'nacionalidad' => $request->nacionalidad,  
+            'sexo' => $request->sexo, 
+            'telefono' => $request->telefono, 
+            'correo' => $request->correo, 
+            'direccion' => $request->direccion,  
+            'posicion' => $request->posicion, 
+            'partidos' => $request->partidos, 
+            'goles' => $request->goles, 
+            'categoria_jugador' => $request->categoria_jugador,
+        ]));
+
+        Flash("El jugador " . $jugador->nombre .  " se a editado de forma corecta")->success();
+
+        return redirect()->route('atleta.index');
     }
 
     /**

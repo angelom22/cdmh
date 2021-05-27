@@ -89,12 +89,11 @@ Route::resource('futbase', 'futBaseController');
 /*
 Ruta de Galeria
 */
-Route::resource('galeria', 'GaleriaController')->names([
-    'update'     => 'galeriaUpdate',
-]);
+Route::resource('galeria', 'GaleriaController');
 Route::delete('/galeria/{galerium}', 'GaleriaController@destroy')->name('galeria.destroy');
 Route::post('galeria/{galerium}/imagen', 'FotosController@store')->name('galeria.foto.store');
-Route::get('/galeria/{galerium}', 'GaleriaController@GaleriaUpdate')->name('GaleriaEdit');
+Route::get('/galeria/{galerium}/edit', 'GaleriaController@GaleriaEditar')->name('GaleriaEditar');
+Route::post('/galeria/{galerium}', 'GaleriaController@GaleriaUpdate')->name('galeriaUpdate');
 
 
 /*

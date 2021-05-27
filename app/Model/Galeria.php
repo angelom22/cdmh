@@ -6,10 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
+use App\Traits\GaleriaTrait;
 
 class Galeria extends Model
 {
     use HasFactory, Sluggable, SluggableScopeHelpers;
+    use GaleriaTrait;
 
     public function sluggable()
     {

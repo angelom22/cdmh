@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="/css/dropzone/min/dropzone.min.css">
      <!-- BS Stepper -->
     <link rel="stylesheet" href="/plugins/bs-stepper/css/bs-stepper.min.css">
+    <!-- DateRangePicker -->
+    <link rel="stylesheet" href="/plugins/daterangepicker/daterangepicker.css">
 
 @endsection
 
@@ -31,7 +33,7 @@
 
         <div class="info-panel">
 
-            <form action="{{route('galeriaUpdate', $galerium)}}" class="form-horizontal padding-top-mini" method="post" enctype="multipart/form-data" files="true">
+            <form action="{{route('galeria.update', $galerium)}}" class="form-horizontal padding-top-mini" method="post" enctype="multipart/form-data" files="true">
 
                 @method('patch')
                 @csrf
@@ -54,29 +56,53 @@
                                 </button>
                                 </div>
 
+                                
+
                             </div>
+                           
                             <div class="bs-stepper-content">
                                 <!-- your steps content here -->
                                 <div id="logins-part" class="content" role="tabpanel" aria-labelledby="logins-part-trigger">
                                     <div class="form-group {{$errors->has('nombre') ? 'has-error' : ''}}">
                                         <label class="control-label col-sm-2"><strong>Nombre</strong> </label>
                                         <div class="col-sm-10">
-                                            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre de la galería" required=""  value="{{old('nombre',  $galerium->nombre) }}" disabled>
+                                            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre de la galería" required=""  value="{{old('nombre',  $galerium->nombre) }}">
                                             {!! $errors->first('nombre', '<span class="alert-danger">:message</span>') !!}
                                         </div>
                                     </div>
 
-                                    <input type="hidden" name="status" value="PUBLICADO">
-<!-- 
-                                    <input type="hidden" value="{{$galerium->fecha}}" name="fecha">
+                                    <div class="form-group {{$errors->has('categoria') ? 'has-error' : ''}}">
+                                        <label class="control-label col-sm-2"><strong>Categoría</strong> *</label>
+                                        <div class="col-sm-10">
+                                            <select class="select2" name="categoria_id" id="categoria_id" tabindex="5">
+                                                <!-- <option value="">Seleccione una categorías</option> -->
+                                                @foreach($categorias as $categoria)
+                                                <option value=" {{$categoria->id }}"
+                                                    {{ old('categoria') == $categoria->id ? 'selected' : '' }} >{{$categoria->name}}</option>
+                                                @endforeach
+                                            </select>
+                                            {!! $errors->first('categoria', '<span class="alert-danger">:message</span>') !!}
+                                        </div>
+                                    </div>
 
-                                    <input type="hidden" value="{{$galerium->categoria_id }}" name="categoria_id"> -->
+                                    <div class="form-group {{$errors->has('fecha') ? 'has-error' : ''}}">
+                                        <label class="control-label col-sm-2"><strong>Fecha</strong> *</label>
+                                        <div class="col-sm-10">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-calendar-alt"></i></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="fecha" name="fecha" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask required="" value="{{old('fecha', $galerium->fecha->format('d-m-y') )}}" >
+                                            </div>
+                                            
+                                            {!! $errors->first('fecha', '<span class="alert-danger">:message</span>') !!}
+                                        </div>
+                                    </div>
 
-
-                                    <!-- <div class="form-group {{$errors->has('categoria') ? 'has-error' : ''}}">
+                                    <div class="form-group {{$errors->has('categoria') ? 'has-error' : ''}}">
                                         <label class="control-label col-sm-2"><strong>Status Galería</strong> *</label>
                                         <div class="col-sm-10">
-                                            <select hidden class="select2" name="status" id="status" tabindex="5">
+                                            <select class="select2" name="status" id="status" tabindex="5">
                                                 <option value="{{$galerium->status}}">{{$galerium->status}}</option>
 
                                                 <option value="BORRADOR">BORRADOR</option>
@@ -85,7 +111,7 @@
                                             </select>
                                             {!! $errors->first('categoria', '<span class="alert-danger">:message</span>') !!}
                                         </div>
-                                    </div> -->
+                                    </div>
 
                                     <div class="form-group {{$errors->has('imagen') ? 'has-error' : ''}}">
                                         <label class="control-label col-sm-2"><strong>Imagenes</strong> *</label>
@@ -103,19 +129,17 @@
                                         </div>
                                     </div>
 
-                                    <a class="btn btn-primary" href="{{route('galeria.create', $galerium )}}">Anterior</a>
-                                    <button type="submit" class="btn btn-primary">Registrar</button>
+                                    <a class="btn btn-primary" href="{{route('galeria.index', $galerium )}}">Anterior</a>
+                                    <button type="submit" class="btn btn-primary">Actualizar</button>
 
                                 </div>
 
 
+
                             </div>
                             </div>
                         </div>
-                        <!-- /.card-body -->
-                        <div class="card-footer">
-                            <p>Complete toda la información necesaria para registrar la galería</p>
-                        </div>
+                        
                         </div>
                         <!-- /.card -->
                     </div>
@@ -123,6 +147,19 @@
                 <!-- /.row -->
 
             </form>
+
+            <div class="row">
+                @foreach($galerium->imagen as $imagen)
+                <div class="col-md-4">
+                <form action="{{route('fotos.destory', $imagen)}}" method="POST">
+                @method('delete')
+                @csrf
+                        <button class="btn btn-danger btn-xs" style="position:absolute"><i class="fa fa-remove"></i></button>
+                        <img class="img-responsive" src="{{ url($imagen->url) }}" alt="">
+                    </form>
+                </div>
+                @endforeach
+            </div>
         </div>
 
     </div>
@@ -150,21 +187,40 @@
 <!-- BS-Stepper -->
 <script src="/plugins/bs-stepper/js/bs-stepper.min.js"></script>
 
+<!-- DateRangePicker -->
+<script src="/plugins/daterangepicker/daterangepicker.js"></script>
+
 
 <script>
 
 
 $(function () {
 
-
     //Initialize Select2 Elements
     $('.select2').select2({
         theme: 'bootstrap4'
     });
 
+    //Datemask dd/mm/yyyy
+    $('#fecha').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+
+    //Date and time picker
+    $('#reservationdatetime').datetimepicker({ icons: { time: 'far fa-clock' } });
+
+    //Date range picker
+    $('#reservation').daterangepicker()
+    //Date range picker with time picker
+    $('#reservationtime').daterangepicker({
+      timePicker: true,
+      timePickerIncrement: 30,
+      locale: {
+        format: 'MM/DD/YYYY hh:mm A'
+      }
+    })
 
 });
 
+   
 
     // BS-Stepper Init
     document.addEventListener('DOMContentLoaded', function () {
